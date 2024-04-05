@@ -1,456 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lei Zero da Termodinâmica</title>
-  <style>
-    body {
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #f0f0f0;
-    }
-    h1 {
-      margin-top: 20px;
-      font-family: Arial;
-      font-size: 24px;
-      text-align: center;
-    }
-    #canvas {
-      margin-top: 10px;
-      border: 2px solid #333;
-    }
-    .temperatureButton {
-      margin-top: 10px;
-    }
-    .materialButton {
-      margin-top: 10px;
-    }
-    .materialButtonGroup {
-      display: flex;
-      align-items: center;
-    }
-    .materialButtonGroup button { 
-     margin-left: 15px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lei Zero da Termodinâmica</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
 
-    }
-    #materialList {
-      list-style-type: none;
-      padding: 0;
-    }
-    #instructionText {
-      font-family: Arial;
-      font-size: 14px;
-      position: absolute;
-      top: 5px;
-      left: 10px;
-    }
+        h1 {
+            margin-top: 20px;
+            font-family: Arial;
+            font-size: 24px;
+            text-align: center;
+        }
 
- table {
-      border-collapse: collapse;
-      width: 60%;
-      font-size: 14px;
-      position: center;
-      bottom: 50px;
-      right: 0;
-      margin-right: 0px;
-    }
+        #canvas {
+            margin-top: 10px;
+            border: 2px solid #333;
+        }
 
-    th, td {
-      border: 1.5px solid #bbb;
-      padding: 8px;
-      text-align: center;
-    }
+        .temperatureButton {
+            margin-top: 10px;
+        }
 
-    th {
-      background-color: #f7f7f7;
-    }
+        .materialButton {
+            margin-top: 10px;
+        }
 
- /* Estilos para o contêiner do GIF */
-    #gifContainer {
-      position: relative;
-    }
+        .materialButtonGroup {
+            display: flex;
+            align-items: center;
+        }
 
-    /* Estilos para o GIF */
-    #gifImage {
-      position: fixed;
-      bottom: 10px;
-      right: 100px;
-z-index: 999;
-      width: 100px; /* Defina o tamanho do GIF conforme necessário */
-    }
+        .materialButtonGroup button {
+            margin-left: 15px;
 
-  </style>
+        }
+
+        #materialList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #instructionText {
+            font-family: Arial;
+            font-size: 14px;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            font-size: 14px;
+            position: center;
+            bottom: 50px;
+            right: 0;
+            margin-right: 0px;
+        }
+
+        th,
+        td {
+            border: 1.5px solid #bbb;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f7f7f7;
+        }
+
+        /* Estilos para o contêiner do GIF */
+        #gifContainer {
+            position: relative;
+        }
+
+        /* Estilos para o GIF */
+        #gifImage {
+            position: fixed;
+            bottom: 10px;
+            right: 100px;
+            z-index: 999;
+            width: 100px;
+            /* Defina o tamanho do GIF conforme necessário */
+        }
+    </style>
 </head>
+
 <body>
-  <p id="instructionText">
-    1 - Clique para selecionar o tipo de material de cada bloco.<br>
-    2 - Clique e arraste os blocos para movê-los.
-  </p>
-  <h1>Lei Zero da Termodinâmica</h1>
-  <canvas id="canvas" width="600" height="200"></canvas>
-  <div>
-    <button id="increaseATemperature" class="temperatureButton">Aumentar temperatura em A</button>
-    <button id="increaseBTemperature" class="temperatureButton">Aumentar temperatura em B</button>
-    <button id="increaseCTemperature" class="temperatureButton">Aumentar temperatura em C</button>
+    <p id="instructionText">
+        1 - Clique para selecionar o tipo de material de cada bloco.<br>
+        2 - Clique e arraste os blocos para movê-los.
+    </p>
+    <h1>Lei Zero da Termodinâmica</h1>
+    <canvas id="canvas" width="600" height="200"></canvas>
+    <div>
+        <button id="increaseATemperature" class="temperatureButton">Aumentar temperatura em A</button>
+        <button id="increaseBTemperature" class="temperatureButton">Aumentar temperatura em B</button>
+        <button id="increaseCTemperature" class="temperatureButton">Aumentar temperatura em C</button>
     </div>
- <div>
-    <button id="decreaseATemperature" class="temperatureButton">Diminuir temperatura em A</button>
-    <button id="decreaseBTemperature" class="temperatureButton">Diminuir temperatura em B</button>
-    <button id="decreaseCTemperature" class="temperatureButton">Diminuir temperatura em C</button>
-  </div>
+    <div>
+        <button id="decreaseATemperature" class="temperatureButton">Diminuir temperatura em A</button>
+        <button id="decreaseBTemperature" class="temperatureButton">Diminuir temperatura em B</button>
+        <button id="decreaseCTemperature" class="temperatureButton">Diminuir temperatura em C</button>
+    </div>
 
-<div>
-    <ul id="materialList">
-        <li class="materialButtonGroup" style="margin-left: -3px;">
-            <span>Água</span>
-            <button class="materialButton" data-material="water" data-block="A" style="background-color: #ff6666;">A</button>
-            <button class="materialButton" data-material="water" data-block="B" style="background-color: #00bfff;">B</button>
-            <button class="materialButton" data-material="water" data-block="C" style="background-color: #28f200;">C</button>
-        </li>
-        <li class="materialButtonGroup" style="margin-left: 0px;">
-            <span>Gelo</span>
-            <button class="materialButton" data-material="ice" data-block="A" style="background-color: #ff6666;">A</button>
-            <button class="materialButton" data-material="ice" data-block="B" style="background-color: #00bfff;">B</button>
-            <button class="materialButton" data-material="ice" data-block="C" style="background-color: #28f200;">C</button>
-        </li>
-        <li class="materialButtonGroup" style="margin-left: -6px;">
-            <span>Vidro</span>
-            <button class="materialButton" data-material="glass" data-block="A" style="background-color: #ff6666;">A</button>
-            <button class="materialButton" data-material="glass" data-block="B" style="background-color: #00bfff;">B</button>
-            <button class="materialButton" data-material="glass" data-block="C" style="background-color: #28f200;">C</button>
-        </li>
-        <li class="materialButtonGroup" style="margin-left: -18px;">
-            <span>Granito</span>
-            <button class="materialButton" data-material="granite" data-block="A" style="background-color: #ff6666;">A</button>
-            <button class="materialButton" data-material="granite" data-block="B" style="background-color: #00bfff;">B</button>
-            <button class="materialButton" data-material="granite" data-block="C" style="background-color: #28f200;">C</button>
-        </li>
-        <li class="materialButtonGroup" style="margin-left: -22px;">
-            <span>Madeira</span>
-            <button class="materialButton" data-material="wood" data-block="A" style="background-color: #ff6666;">A</button>
-            <button class="materialButton" data-material="wood" data-block="B" style="background-color: #00bfff;">B</button>
-            <button class="materialButton" data-material="wood" data-block="C" style="background-color: #28f200;">C</button>
-        </li>
-        <li class="materialButtonGroup" style="margin-left: -30px;">
-            <span>Alumínio</span>
-            <button class="materialButton" data-material="aluminum" data-block="A" style="background-color: #ff6666;">A</button>
-            <button class="materialButton" data-material="aluminum" data-block="B" style="background-color: #00bfff;">B</button>
-            <button class="materialButton" data-material="aluminum" data-block="C" style="background-color: #28f200;">C</button>
-        </li>
-        <li class="materialButtonGroup" style="margin-left: -3px;">
-            <span>Ferro</span>
-            <button class="materialButton" data-material="iron" data-block="A" style="background-color: #ff6666;">A</button>
-            <button class="materialButton" data-material="iron" data-block="B" style="background-color: #00bfff;">B</button>
-            <button class="materialButton" data-material="iron" data-block="C" style="background-color: #28f200;">C</button>
-        </li>
-        <li class="materialButtonGroup" style="margin-left: -7px;">
-            <span>Cobre</span>
-            <button class="materialButton" data-material="copper" data-block="A" style="background-color: #ff6666;">A</button>
-            <button class="materialButton" data-material="copper" data-block="B" style="background-color: #00bfff;">B</button>
-            <button class="materialButton" data-material="copper" data-block="C" style="background-color: #28f200;">C</button>
-        </li>
-        <li class="materialButtonGroup" style="margin-left: -4px;">
-            <span>Areia</span>
-            <button class="materialButton" data-material="sand" data-block="A" style="background-color: #ff6666;">A</button>
-            <button class="materialButton" data-material="sand" data-block="B" style="background-color: #00bfff;">B</button>
-            <button class="materialButton" data-material="sand" data-block="C" style="background-color: #28f200;">C</button>
-        </li>
-    </ul>
-</div>
+    <div>
+        <ul id="materialList">
+            <li class="materialButtonGroup" style="margin-left: -3px;">
+                <span>Água</span>
+                <button class="materialButton" data-material="water" data-block="A"
+                    style="background-color: #ff6666;">A</button>
+                <button class="materialButton" data-material="water" data-block="B"
+                    style="background-color: #00bfff;">B</button>
+                <button class="materialButton" data-material="water" data-block="C"
+                    style="background-color: #28f200;">C</button>
+            </li>
+            <li class="materialButtonGroup" style="margin-left: 0px;">
+                <span>Gelo</span>
+                <button class="materialButton" data-material="ice" data-block="A"
+                    style="background-color: #ff6666;">A</button>
+                <button class="materialButton" data-material="ice" data-block="B"
+                    style="background-color: #00bfff;">B</button>
+                <button class="materialButton" data-material="ice" data-block="C"
+                    style="background-color: #28f200;">C</button>
+            </li>
+            <li class="materialButtonGroup" style="margin-left: -6px;">
+                <span>Vidro</span>
+                <button class="materialButton" data-material="glass" data-block="A"
+                    style="background-color: #ff6666;">A</button>
+                <button class="materialButton" data-material="glass" data-block="B"
+                    style="background-color: #00bfff;">B</button>
+                <button class="materialButton" data-material="glass" data-block="C"
+                    style="background-color: #28f200;">C</button>
+            </li>
+            <li class="materialButtonGroup" style="margin-left: -18px;">
+                <span>Granito</span>
+                <button class="materialButton" data-material="granite" data-block="A"
+                    style="background-color: #ff6666;">A</button>
+                <button class="materialButton" data-material="granite" data-block="B"
+                    style="background-color: #00bfff;">B</button>
+                <button class="materialButton" data-material="granite" data-block="C"
+                    style="background-color: #28f200;">C</button>
+            </li>
+            <li class="materialButtonGroup" style="margin-left: -22px;">
+                <span>Madeira</span>
+                <button class="materialButton" data-material="wood" data-block="A"
+                    style="background-color: #ff6666;">A</button>
+                <button class="materialButton" data-material="wood" data-block="B"
+                    style="background-color: #00bfff;">B</button>
+                <button class="materialButton" data-material="wood" data-block="C"
+                    style="background-color: #28f200;">C</button>
+            </li>
+            <li class="materialButtonGroup" style="margin-left: -30px;">
+                <span>Alumínio</span>
+                <button class="materialButton" data-material="aluminum" data-block="A"
+                    style="background-color: #ff6666;">A</button>
+                <button class="materialButton" data-material="aluminum" data-block="B"
+                    style="background-color: #00bfff;">B</button>
+                <button class="materialButton" data-material="aluminum" data-block="C"
+                    style="background-color: #28f200;">C</button>
+            </li>
+            <li class="materialButtonGroup" style="margin-left: -3px;">
+                <span>Ferro</span>
+                <button class="materialButton" data-material="iron" data-block="A"
+                    style="background-color: #ff6666;">A</button>
+                <button class="materialButton" data-material="iron" data-block="B"
+                    style="background-color: #00bfff;">B</button>
+                <button class="materialButton" data-material="iron" data-block="C"
+                    style="background-color: #28f200;">C</button>
+            </li>
+            <li class="materialButtonGroup" style="margin-left: -7px;">
+                <span>Cobre</span>
+                <button class="materialButton" data-material="copper" data-block="A"
+                    style="background-color: #ff6666;">A</button>
+                <button class="materialButton" data-material="copper" data-block="B"
+                    style="background-color: #00bfff;">B</button>
+                <button class="materialButton" data-material="copper" data-block="C"
+                    style="background-color: #28f200;">C</button>
+            </li>
+            <li class="materialButtonGroup" style="margin-left: -4px;">
+                <span>Areia</span>
+                <button class="materialButton" data-material="sand" data-block="A"
+                    style="background-color: #ff6666;">A</button>
+                <button class="materialButton" data-material="sand" data-block="B"
+                    style="background-color: #00bfff;">B</button>
+                <button class="materialButton" data-material="sand" data-block="C"
+                    style="background-color: #28f200;">C</button>
+            </li>
+        </ul>
+    </div>
 
-<table>
-  <tr>
-    <th>Material</th>
-    <th>Calor específico (J/kg.K)</th>
-    <th>Calor Latente (J/kg)</th>
-    <th>Temperatura Média (°C)</th>
-    <th>Temperatura Mínima (°C)</th>
-    <th>Temperatura Máxima (°C)</th>
-  </tr>
-  <tr>
-    <td>Água</td>
-    <td>4.18</td>
-    <td>2260</td>
-    <td>20</td>
-    <td>0</td>
-    <td>100</td>
-  </tr>
-  <tr>
-    <td>Gelo</td>
-    <td>2.09</td>
-    <td>334</td>
-    <td>0</td>
-    <td>-273.15</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>Vidro</td>
-    <td>0.84</td>
-    <td>0</td>
-    <td>20</td>
-    <td>-273.15</td>
-    <td>1600</td>
-  </tr>
-  <tr>
-    <td>Granito</td>
-    <td>0.79</td>
-    <td>0</td>
-    <td>20</td>
-    <td>-273.15</td>
-    <td>2100</td>
-  </tr>
-  <tr>
-    <td>Madeira</td>
-    <td>1.76</td>
-    <td>0</td>
-    <td>20</td>
-    <td>-273.15</td>
-    <td>350</td>
-  </tr>
-  <tr>
-    <td>Alumínio</td>
-    <td>0.90</td>
-    <td>0</td>
-    <td>20</td>
-    <td>-273.15</td>
-    <td>2519</td>
-  </tr>
-  <tr>
-    <td>Ferro</td>
-    <td>0.45</td>
-    <td>272</td>
-    <td>20</td>
-    <td>-273.15</td>
-    <td>2862</td>
-  </tr>
-  <tr>
-    <td>Cobre</td>
-    <td>0.39</td>
-    <td>205</td>
-    <td>20</td>
-    <td>-273.15</td>
-    <td>2567</td>
-  </tr>
-  <tr>
-    <td>Areia</td>
-    <td>0.84</td>
-    <td>0</td>
-    <td>20</td>
-    <td>-273.15</td>
-    <td>1713</td>
-  </tr>
-</table>
+    <table>
+        <tr>
+            <th>Material</th>
+            <th>Calor específico (J/kg.K)</th>
+            <th>Calor Latente (J/kg)</th>
+            <th>Temperatura Média (°C)</th>
+            <th>Temperatura Mínima (°C)</th>
+            <th>Temperatura Máxima (°C)</th>
+        </tr>
+        <tr>
+            <td>Água</td>
+            <td>4.18</td>
+            <td>2260</td>
+            <td>20</td>
+            <td>0</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Gelo</td>
+            <td>2.09</td>
+            <td>334</td>
+            <td>0</td>
+            <td>-273.15</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Vidro</td>
+            <td>0.84</td>
+            <td>0</td>
+            <td>20</td>
+            <td>-273.15</td>
+            <td>1600</td>
+        </tr>
+        <tr>
+            <td>Granito</td>
+            <td>0.79</td>
+            <td>0</td>
+            <td>20</td>
+            <td>-273.15</td>
+            <td>2100</td>
+        </tr>
+        <tr>
+            <td>Madeira</td>
+            <td>1.76</td>
+            <td>0</td>
+            <td>20</td>
+            <td>-273.15</td>
+            <td>350</td>
+        </tr>
+        <tr>
+            <td>Alumínio</td>
+            <td>0.90</td>
+            <td>0</td>
+            <td>20</td>
+            <td>-273.15</td>
+            <td>2519</td>
+        </tr>
+        <tr>
+            <td>Ferro</td>
+            <td>0.45</td>
+            <td>272</td>
+            <td>20</td>
+            <td>-273.15</td>
+            <td>2862</td>
+        </tr>
+        <tr>
+            <td>Cobre</td>
+            <td>0.39</td>
+            <td>205</td>
+            <td>20</td>
+            <td>-273.15</td>
+            <td>2567</td>
+        </tr>
+        <tr>
+            <td>Areia</td>
+            <td>0.84</td>
+            <td>0</td>
+            <td>20</td>
+            <td>-273.15</td>
+            <td>1713</td>
+        </tr>
+    </table>
 
-<img src="https://slideplayer.com.br/slide/5610084/2/images/2/Lei+zero+da+termodin%C3%A2mica.jpg" alt="Lei Zero da Termodinâmica" style="width: 810px; margin-top: 20px;">
+    <img src="https://slideplayer.com.br/slide/5610084/2/images/2/Lei+zero+da+termodin%C3%A2mica.jpg"
+        alt="Lei Zero da Termodinâmica" style="width: 810px; margin-top: 20px;">
 
-  <script>
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
 
-    const blockWidth = 100;
-    const blockHeight = 100;
-    const timeInterval = 10000; // Intervalo de tempo em milissegundos
-   
+        const blockWidth = 100;
+        const blockHeight = 100;
+        const timeInterval = 10000; // Intervalo de tempo em milissegundos
 
 
-    let blocks = [
-      { x: 50, y: 50, color: '#ff6666', temperature: 0, label: 'A', material: 'ice', mass: 1 },
-      { x: 250, y: 50, color: '#00bfff', temperature: 60, label: 'B', material: 'water', mass: 1 },
-      { x: 450, y: 50, color: '#28f200', temperature: 20, label: 'C', material: 'glass', mass: 1 }
-    ];
 
-    let isSimulationRunning = true;
-    let lastUpdateTime = Date.now();
+        let blocks = [
+            { x: 50, y: 50, color: '#ff6666', temperature: 0, label: 'A', material: 'ice', mass: 1 },
+            { x: 250, y: 50, color: '#00bfff', temperature: 60, label: 'B', material: 'water', mass: 1 },
+            { x: 450, y: 50, color: '#28f200', temperature: 20, label: 'C', material: 'glass', mass: 1 }
+        ];
 
-    let selectedBlockIndex = -1;
-    let initialX, initialY;
+        let isSimulationRunning = true;
+        let lastUpdateTime = Date.now();
 
-    const materialProperties = {
-      water: { name: 'Água', specificHeat: 4.18, latentHeat: 2260, averageTemperature: 20, minTemperature: 0, maxTemperature: 100 },      
-      ice: { name: 'Gelo', specificHeat: 2.09, latentHeat: 334, averageTemperature: 0, minTemperature: -273.15, maxTemperature: 0 },
-      glass: { name: 'Vidro', specificHeat: 0.84, latentHeat: 0, averageTemperature: 20, minTemperature: -273.15, maxTemperature: 1600 },        
-      granite: { name: 'Granito', specificHeat: 0.79, latentHeat: 0, averageTemperature: 20, minTemperature: -273.15, maxTemperature: 2100 },
-      wood: { name: 'Madeira', specificHeat: 1.76, latentHeat: 0, averageTemperature: 20, minTemperature: -273.15, maxTemperature: 350 },
-      aluminum: { name: 'Alumínio', specificHeat: 0.90, latentHeat: 0, averageTemperature: 20, minTemperature: -273.15, maxTemperature: 2519 },
-      iron: { name: 'Ferro', specificHeat: 0.45, latentHeat: 272, averageTemperature: 20, minTemperature: -273.15, maxTemperature: 2862 },
-      copper: { name: 'Cobre', specificHeat: 0.39, latentHeat: 205, averageTemperature: 20, minTemperature: -273.15, maxTemperature: 2567 },
-      sand: { name: 'Areia', specificHeat: 0.84, latentHeat: 0, averageTemperature: 20, minTemperature: -273.15, maxTemperature: 1713 }
-    };
+        let selectedBlockIndex = -1;
+        let initialX, initialY;
 
-    function drawBlocks() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      blocks.forEach((block, index) => {
-        ctx.fillStyle = block.color;
-        ctx.fillRect(block.x, block.y, blockWidth, blockHeight);
-        ctx.fillStyle = '#000';
-        ctx.font = '24px Arial';
-        ctx.fillText(block.label, block.x + 40, block.y + 60);
-        ctx.font = '14px Arial';
-        ctx.fillText(`Temp: ${block.temperature.toFixed(1)}°C`, block.x, block.y - 5);
-        ctx.fillText(materialProperties[block.material].name, block.x + 10, block.y + blockHeight - 5);
-      });
-    }
+        const materialProperties = {
+            water: { name: 'Água', specificHeat: 4.18, latentHeat: 2260, averageTemperature: 20, minTemperature: 0, maxTemperature: 100 },
+            ice: { name: 'Gelo', specificHeat: 2.09, latentHeat: 334, averageTemperature: 0, minTemperature: -273.15, maxTemperature: 0 },
+            glass: { name: 'Vidro', specificHeat: 0.84, latentHeat: 0, averageTemperature: 20, minTemperature: -273.15, maxTemperature: 1600 },
+            granite: { name: 'Granito', specificHeat: 0.79, latentHeat: 0, averageTemperature: 20, minTemperature: -273.15, maxTemperature: 2100 },
+            wood: { name: 'Madeira', specificHeat: 1.76, latentHeat: 0, averageTemperature: 20, minTemperature: -273.15, maxTemperature: 350 },
+            aluminum: { name: 'Alumínio', specificHeat: 0.90, latentHeat: 0, averageTemperature: 20, minTemperature: -273.15, maxTemperature: 2519 },
+            iron: { name: 'Ferro', specificHeat: 0.45, latentHeat: 272, averageTemperature: 20, minTemperature: -273.15, maxTemperature: 2862 },
+            copper: { name: 'Cobre', specificHeat: 0.39, latentHeat: 205, averageTemperature: 20, minTemperature: -273.15, maxTemperature: 2567 },
+            sand: { name: 'Areia', specificHeat: 0.84, latentHeat: 0, averageTemperature: 20, minTemperature: -273.15, maxTemperature: 1713 }
+        };
 
-    function exchangeHeat() {
-      const currentTime = Date.now();
-      const deltaTime = (currentTime - lastUpdateTime) / 1000; // Tempo decorrido em segundos
-
-      for (let i = 0; i < blocks.length; i++) {
-        for (let j = i + 1; j < blocks.length; j++) {
-          const block1 = blocks[i];
-          const block2 = blocks[j];
-          const distance = Math.abs(block1.x - block2.x);
-          const maxDistance = blockWidth;
-          const temperatureDifference = Math.abs(block1.temperature - block2.temperature);
-
-          if (distance < maxDistance) {
-            const heatTransferRate = temperatureDifference / timeInterval; // Taxa de transferência de calor por segundo
-            const heatTransfer = heatTransferRate * deltaTime; // Quantidade de calor transferido no intervalo de tempo
-            block1.temperature -= heatTransfer;
-            block2.temperature += heatTransfer;
-          }
+        function drawBlocks() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            blocks.forEach((block, index) => {
+                ctx.fillStyle = block.color;
+                ctx.fillRect(block.x, block.y, blockWidth, blockHeight);
+                ctx.fillStyle = '#000';
+                ctx.font = '24px Arial';
+                ctx.fillText(block.label, block.x + 40, block.y + 60);
+                ctx.font = '14px Arial';
+                ctx.fillText(`Temp: ${block.temperature.toFixed(1)}°C`, block.x, block.y - 5);
+                ctx.fillText(materialProperties[block.material].name, block.x + 10, block.y + blockHeight - 5);
+            });
         }
-      }
 
-      lastUpdateTime = currentTime;
-    }
+        function exchangeHeat() {
+            const currentTime = Date.now();
+            const deltaTime = (currentTime - lastUpdateTime) / 1000; // Tempo decorrido em segundos
 
-    function equalizeTemperature() {
-      for (let i = 0; i < blocks.length; i++) {
-        for (let j = i + 1; j < blocks.length; j++) {
-          const block1 = blocks[i];
-          const block2 = blocks[j];
-          if (
-            block1.x < block2.x + blockWidth &&
-            block1.x + blockWidth > block2.x &&
-            block1.y < block2.y + blockHeight &&
-            block1.y + blockHeight > block2.y
-          ) {
-            // Calcular a quantidade de calor transferida (Q) usando a fórmula Q = mcΔT
-            const mass1 = block1.mass;
-            const mass2 = block2.mass;
-            const specificHeat1 = materialProperties[block1.material].specificHeat;
-            const specificHeat2 = materialProperties[block2.material].specificHeat;
-            const temperatureDifference = Math.abs(block1.temperature - block2.temperature);
-            let heatTransfer = mass1 * specificHeat1 * temperatureDifference / (mass1 + mass2);
+            for (let i = 0; i < blocks.length; i++) {
+                for (let j = i + 1; j < blocks.length; j++) {
+                    const block1 = blocks[i];
+                    const block2 = blocks[j];
+                    const distance = Math.abs(block1.x - block2.x);
+                    const maxDistance = blockWidth;
+                    const temperatureDifference = Math.abs(block1.temperature - block2.temperature);
 
-            // Verificar se o calor transferido excede a diferença de temperatura
-            if (heatTransfer > temperatureDifference) {
-              heatTransfer = temperatureDifference;
+                    if (distance < maxDistance) {
+                        const heatTransferRate = temperatureDifference / timeInterval; // Taxa de transferência de calor por segundo
+                        const heatTransfer = heatTransferRate * deltaTime; // Quantidade de calor transferido no intervalo de tempo
+                        block1.temperature -= heatTransfer;
+                        block2.temperature += heatTransfer;
+                    }
+                }
             }
 
-            // Atualizar as temperaturas dos blocos
-            if (block1.temperature > block2.temperature) {
-              block1.temperature -= heatTransfer / (mass1 * specificHeat1);
-              block2.temperature += heatTransfer / (mass2 * specificHeat2);
-            } else {
-              block1.temperature += heatTransfer / (mass1 * specificHeat1);
-              block2.temperature -= heatTransfer / (mass2 * specificHeat2);
+            lastUpdateTime = currentTime;
+        }
+
+        function equalizeTemperature() {
+            for (let i = 0; i < blocks.length; i++) {
+                for (let j = i + 1; j < blocks.length; j++) {
+                    const block1 = blocks[i];
+                    const block2 = blocks[j];
+                    if (
+                        block1.x < block2.x + blockWidth &&
+                        block1.x + blockWidth > block2.x &&
+                        block1.y < block2.y + blockHeight &&
+                        block1.y + blockHeight > block2.y
+                    ) {
+                        // Calcular a quantidade de calor transferida (Q) usando a fórmula Q = mcΔT
+                        const mass1 = block1.mass;
+                        const mass2 = block2.mass;
+                        const specificHeat1 = materialProperties[block1.material].specificHeat;
+                        const specificHeat2 = materialProperties[block2.material].specificHeat;
+                        const temperatureDifference = Math.abs(block1.temperature - block2.temperature);
+                        let heatTransfer = mass1 * specificHeat1 * temperatureDifference / (mass1 + mass2);
+
+                        // Verificar se o calor transferido excede a diferença de temperatura
+                        if (heatTransfer > temperatureDifference) {
+                            heatTransfer = temperatureDifference;
+                        }
+
+                        // Atualizar as temperaturas dos blocos
+                        if (block1.temperature > block2.temperature) {
+                            block1.temperature -= heatTransfer / (mass1 * specificHeat1);
+                            block2.temperature += heatTransfer / (mass2 * specificHeat2);
+                        } else {
+                            block1.temperature += heatTransfer / (mass1 * specificHeat1);
+                            block2.temperature -= heatTransfer / (mass2 * specificHeat2);
+                        }
+
+                        // Verificar se as temperaturas estão dentro dos limites dos materiais
+                        const minTemperature = Math.min(materialProperties[block1.material].minTemperature, materialProperties[block2.material].minTemperature);
+                        const maxTemperature = Math.max(materialProperties[block1.material].maxTemperature, materialProperties[block2.material].maxTemperature);
+                        block1.temperature = Math.max(minTemperature, Math.min(maxTemperature, block1.temperature));
+                        block2.temperature = Math.max(minTemperature, Math.min(maxTemperature, block2.temperature));
+
+                        // Verificar se o material do bloco de gelo deve mudar para água
+                        if (blocks[i].material === 'ice' && blocks[i].temperature > 0) {
+                            changeMaterial(i, 'water');
+                        }
+
+                        // Verificar se o material do bloco de água deve mudar para gelo
+                        if (blocks[i].material === 'water' && blocks[i].temperature <= 0) {
+                            changeMaterial(i, 'ice');
+                        }
+                    }
+                }
             }
-            
-            // Verificar se as temperaturas estão dentro dos limites dos materiais
-            const minTemperature = Math.min(materialProperties[block1.material].minTemperature, materialProperties[block2.material].minTemperature);
-            const maxTemperature = Math.max(materialProperties[block1.material].maxTemperature, materialProperties[block2.material].maxTemperature);
-            block1.temperature = Math.max(minTemperature, Math.min(maxTemperature, block1.temperature));
-            block2.temperature = Math.max(minTemperature, Math.min(maxTemperature, block2.temperature));
-
-    // Verificar se o material do bloco de gelo deve mudar para água
-    if (blocks[i].material === 'ice' && blocks[i].temperature > 0) {
-      changeMaterial(i, 'water');
-    }
-
-    // Verificar se o material do bloco de água deve mudar para gelo
-    if (blocks[i].material === 'water' && blocks[i].temperature <= 0) {
-      changeMaterial(i, 'ice');
         }
-      }
-    }
-  }
-}
 
 
 
-    function increaseTemperature(blockIndex) {
-      blocks[blockIndex].temperature += 10;
-    }
-
-    function decreaseTemperature(blockIndex) {
-      blocks[blockIndex].temperature -= 10;
-    }
-
-    function update() {
-      if (isSimulationRunning) {
-        exchangeHeat();
-        equalizeTemperature();
-        drawBlocks();
-      }
-      requestAnimationFrame(update);
-    }
-
-    function handleMouseDown(event) {
-      const mouseX = event.clientX - canvas.getBoundingClientRect().left;
-      const mouseY = event.clientY - canvas.getBoundingClientRect().top;
-
-      blocks.forEach((block, index) => {
-        if (mouseX >= block.x && mouseX <= block.x + blockWidth && 
-            mouseY >= block.y && mouseY <= block.y + blockHeight) {
-          selectedBlockIndex = index;
-          initialX = mouseX - block.x;
-          initialY = mouseY - block.y;
-          canvas.addEventListener('mousemove', handleMouseMove);
-          canvas.addEventListener('mouseup', handleMouseUp);
+        function increaseTemperature(blockIndex) {
+            blocks[blockIndex].temperature += 10;
         }
-      });
-    }
 
-    function handleMouseMove(event) {
-      const mouseX = event.clientX - canvas.getBoundingClientRect().left;
-      const mouseY = event.clientY - canvas.getBoundingClientRect().top;
+        function decreaseTemperature(blockIndex) {
+            blocks[blockIndex].temperature -= 10;
+        }
 
-      if (selectedBlockIndex !== -1) {
-        const block = blocks[selectedBlockIndex];
-        block.x = mouseX - initialX;
-        block.y = mouseY - initialY;
-        drawBlocks();
-      }
-    }
+        function update() {
+            if (isSimulationRunning) {
+                exchangeHeat();
+                equalizeTemperature();
+                drawBlocks();
+            }
+            requestAnimationFrame(update);
+        }
 
-    function handleMouseUp() {
-      canvas.removeEventListener('mousemove', handleMouseMove);
-      canvas.removeEventListener('mouseup', handleMouseUp);
-      selectedBlockIndex = -1;
-    }
+        function handleMouseDown(event) {
+            const mouseX = event.clientX - canvas.getBoundingClientRect().left;
+            const mouseY = event.clientY - canvas.getBoundingClientRect().top;
 
-    function changeMaterial(blockIndex, material) {
-      blocks[blockIndex].material = material;
-      blocks[blockIndex].specificHeat = materialProperties[material].specificHeat;
-      blocks[blockIndex].latentHeat = materialProperties[material].latentHeat;
-      blocks[blockIndex].temperature = materialProperties[material].averageTemperature;
-    }
+            blocks.forEach((block, index) => {
+                if (mouseX >= block.x && mouseX <= block.x + blockWidth &&
+                    mouseY >= block.y && mouseY <= block.y + blockHeight) {
+                    selectedBlockIndex = index;
+                    initialX = mouseX - block.x;
+                    initialY = mouseY - block.y;
+                    canvas.addEventListener('mousemove', handleMouseMove);
+                    canvas.addEventListener('mouseup', handleMouseUp);
+                }
+            });
+        }
 
-    function handleMaterialSelection(event) {
-      const material = event.target.getAttribute('data-material');
-      const blockIndex = blocks.findIndex(block => block.label === event.target.getAttribute('data-block'));
-      if (blockIndex !== -1) {
-        changeMaterial(blockIndex, material);
-      }
-    }
+        function handleMouseMove(event) {
+            const mouseX = event.clientX - canvas.getBoundingClientRect().left;
+            const mouseY = event.clientY - canvas.getBoundingClientRect().top;
 
-    document.querySelectorAll('.materialButton').forEach(button => {
-      button.addEventListener('click', handleMaterialSelection);
-    });
+            if (selectedBlockIndex !== -1) {
+                const block = blocks[selectedBlockIndex];
+                block.x = mouseX - initialX;
+                block.y = mouseY - initialY;
+                drawBlocks();
+            }
+        }
 
-    document.getElementById('increaseATemperature').addEventListener('click', () => increaseTemperature(0));
-    document.getElementById('increaseBTemperature').addEventListener('click', () => increaseTemperature(1));
-    document.getElementById('increaseCTemperature').addEventListener('click', () => increaseTemperature(2));
-    document.getElementById('decreaseATemperature').addEventListener('click', () => decreaseTemperature(0));
-    document.getElementById('decreaseBTemperature').addEventListener('click', () => decreaseTemperature(1));
-    document.getElementById('decreaseCTemperature').addEventListener('click', () => decreaseTemperature(2));
-    canvas.addEventListener('mousedown', handleMouseDown);
-    update();
-  </script>
+        function handleMouseUp() {
+            canvas.removeEventListener('mousemove', handleMouseMove);
+            canvas.removeEventListener('mouseup', handleMouseUp);
+            selectedBlockIndex = -1;
+        }
+
+        function changeMaterial(blockIndex, material) {
+            blocks[blockIndex].material = material;
+            blocks[blockIndex].specificHeat = materialProperties[material].specificHeat;
+            blocks[blockIndex].latentHeat = materialProperties[material].latentHeat;
+            blocks[blockIndex].temperature = materialProperties[material].averageTemperature;
+        }
+
+        function handleMaterialSelection(event) {
+            const material = event.target.getAttribute('data-material');
+            const blockIndex = blocks.findIndex(block => block.label === event.target.getAttribute('data-block'));
+            if (blockIndex !== -1) {
+                changeMaterial(blockIndex, material);
+            }
+        }
+
+        document.querySelectorAll('.materialButton').forEach(button => {
+            button.addEventListener('click', handleMaterialSelection);
+        });
+
+        document.getElementById('increaseATemperature').addEventListener('click', () => increaseTemperature(0));
+        document.getElementById('increaseBTemperature').addEventListener('click', () => increaseTemperature(1));
+        document.getElementById('increaseCTemperature').addEventListener('click', () => increaseTemperature(2));
+        document.getElementById('decreaseATemperature').addEventListener('click', () => decreaseTemperature(0));
+        document.getElementById('decreaseBTemperature').addEventListener('click', () => decreaseTemperature(1));
+        document.getElementById('decreaseCTemperature').addEventListener('click', () => decreaseTemperature(2));
+        canvas.addEventListener('mousedown', handleMouseDown);
+        update();
+    </script>
 </body>
+
 </html>
