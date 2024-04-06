@@ -22,31 +22,26 @@ h1 {
     margin-top: 10px;
 }
 
-.materialButton {
-    margin-top: 10px;
-}
-
 .materialButtonGroup {
     display: flex;
     align-items: center;
-}
-
-.materialButtonGroup button {
-    margin-left: 15px;
-
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 #materialList {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 #instructionText {
     font-family: Arial;
     font-size: 14px;
-    position: absolute;
-    top: 5px;
-    left: 10px;
+    text-align: left;
 }
 
 table {
@@ -83,4 +78,12 @@ th {
     z-index: 999;
     width: 100px;
     /* Defina o tamanho do GIF conforme necessário */
+}
+
+a:visited {
+    color: #333;
+}
+
+footer {
+    padding: 32px;
 }
