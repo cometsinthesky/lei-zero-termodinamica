@@ -30,6 +30,13 @@ h1 {
     margin-bottom: 10px;
 }
 
+.materialButtonGroup button {
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    cursor: pointer;
+}
+
 #materialList {
     list-style-type: none;
     padding: 0;
@@ -46,11 +53,8 @@ h1 {
 
 table {
     border-collapse: collapse;
-    width: 60%;
+    width: 700px;
     font-size: 14px;
-    position: center;
-    bottom: 50px;
-    right: 0;
     margin-right: 0px;
 }
 
@@ -85,5 +89,6 @@ a:visited {
 }
 
 footer {
-    padding: 32px;
+    padding-left: 32px;
+    padding-right: 32px;
 }
