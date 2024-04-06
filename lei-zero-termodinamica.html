@@ -198,6 +198,7 @@
     <img src="https://slideplayer.com.br/slide/5610084/2/images/2/Lei+zero+da+termodin%C3%A2mica.jpg"
         alt="Lei Zero da Termodinâmica" style="width: 810px; margin-top: 20px;">
 
+    <script src="./materials.js"></script>
     <script>
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
@@ -246,48 +247,27 @@
             });
         }
 
-        function exchangeHeat() {
-            const currentTime = Date.now();
-            const deltaTime = (currentTime - lastUpdateTime) / 1000; // Tempo decorrido em segundos
-
-            for (let i = 0; i < blocks.length; i++) {
-                for (let j = i + 1; j < blocks.length; j++) {
-                    const block1 = blocks[i];
-                    const block2 = blocks[j];
-                    const distance = Math.abs(block1.x - block2.x);
-                    const maxDistance = blockWidth;
-                    const temperatureDifference = Math.abs(block1.temperature - block2.temperature);
-
-                    if (distance < maxDistance) {
-                        const heatTransferRate = temperatureDifference / timeInterval; // Taxa de transferência de calor por segundo
-                        const heatTransfer = heatTransferRate * deltaTime; // Quantidade de calor transferido no intervalo de tempo
-                        block1.temperature -= heatTransfer;
-                        block2.temperature += heatTransfer;
-                    }
-                }
-            }
-
-            lastUpdateTime = currentTime;
-        }
-
         function equalizeTemperature() {
+            const temperatureExchangeRate = 10000;
+            const currentTime = Date.now();
+            const deltaTime = (currentTime - lastUpdateTime) / temperatureExchangeRate; // Tempo decorrido em segundos
             for (let i = 0; i < blocks.length; i++) {
                 for (let j = i + 1; j < blocks.length; j++) {
                     const block1 = blocks[i];
                     const block2 = blocks[j];
-                    if (
-                        block1.x < block2.x + blockWidth &&
+                    const blocksInContact = block1.x < block2.x + blockWidth &&
                         block1.x + blockWidth > block2.x &&
                         block1.y < block2.y + blockHeight &&
-                        block1.y + blockHeight > block2.y
-                    ) {
+                        block1.y + blockHeight > block2.y;
+                    
+                        if (blocksInContact) {
                         // Calcular a quantidade de calor transferida (Q) usando a fórmula Q = mcΔT
                         const mass1 = block1.mass;
                         const mass2 = block2.mass;
                         const specificHeat1 = materialProperties[block1.material].specificHeat;
                         const specificHeat2 = materialProperties[block2.material].specificHeat;
                         const temperatureDifference = Math.abs(block1.temperature - block2.temperature);
-                        let heatTransfer = mass1 * specificHeat1 * temperatureDifference / (mass1 + mass2);
+                        let heatTransfer = (mass1 * specificHeat1 * temperatureDifference / (mass1 + mass2)) * deltaTime;
 
                         // Verificar se o calor transferido excede a diferença de temperatura
                         if (heatTransfer > temperatureDifference) {
@@ -321,6 +301,7 @@
                     }
                 }
             }
+            lastUpdateTime = currentTime;
         }
 
 
@@ -335,7 +316,6 @@
 
         function update() {
             if (isSimulationRunning) {
-                exchangeHeat();
                 equalizeTemperature();
                 drawBlocks();
             }
