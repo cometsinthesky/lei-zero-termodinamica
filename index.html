@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lei Zero da Termodinâmica</title>
+    <link rel="stylesheet" href="./src/styles/main.css" />
+</head>
+
+<body style="position: relative;">
+    <div style="width: 100%; text-align: left; padding-left: 40px;">
+        <p id="instructionText">
+            1 - Clique para selecionar o tipo de material de cada bloco.<br>
+            2 - Clique e arraste os blocos para movê-los.
+        </p>
+    </div>
+
+    <h1>Lei Zero da Termodinâmica</h1>
+
+    <canvas id="canvas" width="600" height="200"></canvas>
+
+    <div>
+        <button id="increaseATemperature" class="temperatureButton">Aumentar temperatura em A</button>
+        <button id="increaseBTemperature" class="temperatureButton">Aumentar temperatura em B</button>
+        <button id="increaseCTemperature" class="temperatureButton">Aumentar temperatura em C</button>
+    </div>
+
+    <div>
+        <button id="decreaseATemperature" class="temperatureButton">Diminuir temperatura em A</button>
+        <button id="decreaseBTemperature" class="temperatureButton">Diminuir temperatura em B</button>
+        <button id="decreaseCTemperature" class="temperatureButton">Diminuir temperatura em C</button>
+    </div>
+
+    <ul id="materialList">
+        <li class="materialButtonGroup">
+            <span>Água</span>
+            <button class="materialButton" data-material="water" data-block="A"
+                style="background-color: #ff6666;">A</button>
+            <button class="materialButton" data-material="water" data-block="B"
+                style="background-color: #00bfff;">B</button>
+            <button class="materialButton" data-material="water" data-block="C"
+                style="background-color: #28f200;">C</button>
+        </li>
+
+        <li class="materialButtonGroup">
+            <span>Gelo</span>
+            <button class="materialButton" data-material="ice" data-block="A"
+                style="background-color: #ff6666;">A</button>
+            <button class="materialButton" data-material="ice" data-block="B"
+                style="background-color: #00bfff;">B</button>
+            <button class="materialButton" data-material="ice" data-block="C"
+                style="background-color: #28f200;">C</button>
+        </li>
+
+        <li class="materialButtonGroup">
+            <span>Vidro</span>
+            <button class="materialButton" data-material="glass" data-block="A"
+                style="background-color: #ff6666;">A</button>
+            <button class="materialButton" data-material="glass" data-block="B"
+                style="background-color: #00bfff;">B</button>
+            <button class="materialButton" data-material="glass" data-block="C"
+                style="background-color: #28f200;">C</button>
+        </li>
+
+        <li class="materialButtonGroup">
+            <span>Granito</span>
+            <button class="materialButton" data-material="granite" data-block="A"
+                style="background-color: #ff6666;">A</button>
+            <button class="materialButton" data-material="granite" data-block="B"
+                style="background-color: #00bfff;">B</button>
+            <button class="materialButton" data-material="granite" data-block="C"
+                style="background-color: #28f200;">C</button>
+        </li>
+
+        <li class="materialButtonGroup">
+            <span>Madeira</span>
+            <button class="materialButton" data-material="wood" data-block="A"
+                style="background-color: #ff6666;">A</button>
+            <button class="materialButton" data-material="wood" data-block="B"
+                style="background-color: #00bfff;">B</button>
+            <button class="materialButton" data-material="wood" data-block="C"
+                style="background-color: #28f200;">C</button>
+        </li>
+
+        <li class="materialButtonGroup">
+            <span>Alumínio</span>
+            <button class="materialButton" data-material="aluminum" data-block="A"
+                style="background-color: #ff6666;">A</button>
+            <button class="materialButton" data-material="aluminum" data-block="B"
+                style="background-color: #00bfff;">B</button>
+            <button class="materialButton" data-material="aluminum" data-block="C"
+                style="background-color: #28f200;">C</button>
+        </li>
+
+        <li class="materialButtonGroup">
+            <span>Ferro</span>
+            <button class="materialButton" data-material="iron" data-block="A"
+                style="background-color: #ff6666;">A</button>
+            <button class="materialButton" data-material="iron" data-block="B"
+                style="background-color: #00bfff;">B</button>
+            <button class="materialButton" data-material="iron" data-block="C"
+                style="background-color: #28f200;">C</button>
+        </li>
+
+        <li class="materialButtonGroup">
+            <span>Cobre</span>
+            <button class="materialButton" data-material="copper" data-block="A"
+                style="background-color: #ff6666;">A</button>
+            <button class="materialButton" data-material="copper" data-block="B"
+                style="background-color: #00bfff;">B</button>
+            <button class="materialButton" data-material="copper" data-block="C"
+                style="background-color: #28f200;">C</button>
+        </li>
+
+        <li class="materialButtonGroup">
+            <span>Areia</span>
+            <button class="materialButton" data-material="sand" data-block="A"
+                style="background-color: #ff6666;">A</button>
+            <button class="materialButton" data-material="sand" data-block="B"
+                style="background-color: #00bfff;">B</button>
+            <button class="materialButton" data-material="sand" data-block="C"
+                style="background-color: #28f200;">C</button>
+        </li>
+    </ul>
+
+
+    <table>
+        <tr>
+            <th>Material</th>
+            <th>Calor específico (J/kg.K)</th>
+            <th>Calor Latente (J/kg)</th>
+            <th>Temperatura Média (°C)</th>
+            <th>Temperatura Mínima (°C)</th>
+            <th>Temperatura Máxima (°C)</th>
+        </tr>
+        <tr>
+            <td>Água</td>
+            <td>4.18</td>
+            <td>2260</td>
+            <td>20</td>
+            <td>0</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Gelo</td>
+            <td>2.09</td>
+            <td>334</td>
+            <td>0</td>
+            <td>-273.15</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Vidro</td>
+            <td>0.84</td>
+            <td>0</td>
+            <td>20</td>
+            <td>-273.15</td>
+            <td>1600</td>
+        </tr>
+        <tr>
+            <td>Granito</td>
+            <td>0.79</td>
+            <td>0</td>
+            <td>20</td>
+            <td>-273.15</td>
+            <td>2100</td>
+        </tr>
+        <tr>
+            <td>Madeira</td>
+            <td>1.76</td>
+            <td>0</td>
+            <td>20</td>
+            <td>-273.15</td>
+            <td>350</td>
+        </tr>
+        <tr>
+            <td>Alumínio</td>
+            <td>0.90</td>
+            <td>0</td>
+            <td>20</td>
+            <td>-273.15</td>
+            <td>2519</td>
+        </tr>
+        <tr>
+            <td>Ferro</td>
+            <td>0.45</td>
+            <td>272</td>
+            <td>20</td>
+            <td>-273.15</td>
+            <td>2862</td>
+        </tr>
+        <tr>
+            <td>Cobre</td>
+            <td>0.39</td>
+            <td>205</td>
+            <td>20</td>
+            <td>-273.15</td>
+            <td>2567</td>
+        </tr>
+        <tr>
+            <td>Areia</td>
+            <td>0.84</td>
+            <td>0</td>
+            <td>20</td>
+            <td>-273.15</td>
+            <td>1713</td>
+        </tr>
+    </table>
+
+    <img src="https://slideplayer.com.br/slide/5610084/2/images/2/Lei+zero+da+termodin%C3%A2mica.jpg"
+        alt="Lei Zero da Termodinâmica" style="width: 810px; margin-top: 20px;">
+
+    <footer>
+        <p>Criado por: <a href="https://github.com/cometsinthesky" target="_blank">Lucas Ferreira (MNPEF/UnB)</a> | Contribuição: <a href="https://github.com/thebinaryfelix" target="_blank">Mateus Félix (Desenvolvedor Javascript Sênior)</a></p>
+    </footer>
+
+    <script src="./src/js/materials.js"></script>
+    <script src="./src/js/variables.js"></script>
+    <script src="./src/js/functions.js"></script>
+    <script src="./src/js/runner.js"></script>
+</body>
+
+</html>
