@@ -55,13 +55,17 @@ function equalizeTemperature() {
                 block2.temperature = Math.max(minTemperature, Math.min(maxTemperature, block2.temperature));
 
                 // Verificar se o material do bloco de gelo deve mudar para água
-                if (blocks[i].material === 'ice' && blocks[i].temperature > 0) {
-                    changeMaterial(i, 'water');
+                if (block1.material === 'ice' && block1.temperature > 0) {
+                    changeMaterial(i, 'water', block1);
+                } else if (block2.material === 'ice' && block2.temperature > 0) {
+                    changeMaterial(j, 'water', block2);
                 }
 
                 // Verificar se o material do bloco de água deve mudar para gelo
-                if (blocks[i].material === 'water' && blocks[i].temperature <= 0) {
-                    changeMaterial(i, 'ice');
+                if (block1.material === 'water' && block1.temperature <= 0) {
+                    changeMaterial(i, 'ice', block1);
+                } else if (block2.material === 'water' && block2.temperature <= 0) {
+                    changeMaterial(j, 'ice', block2);
                 }
             }
         }
@@ -70,11 +74,19 @@ function equalizeTemperature() {
 }
 
 function increaseTemperature(blockIndex) {
-    blocks[blockIndex].temperature += 10;
+    const block = blocks[blockIndex];
+    block.temperature += 10;
+    if (block.material === 'ice' && block.temperature > 0) {
+        changeMaterial(blockIndex, 'water', block)
+    }
 }
 
 function decreaseTemperature(blockIndex) {
-    blocks[blockIndex].temperature -= 10;
+    const block = blocks[blockIndex];
+    block.temperature -= 10;
+    if (block.material === 'water' && block.temperature <= 0) {
+        changeMaterial(blockIndex, 'ice', block)
+    }
 }
 
 function handleMouseDown(event) {
@@ -111,7 +123,14 @@ function handleMouseUp() {
     selectedBlockIndex = -1;
 }
 
-function changeMaterial(blockIndex, material) {
+function changeMaterial(blockIndex, material, currentBlock) {
+    blocks[blockIndex].material = material;
+    blocks[blockIndex].specificHeat = materialProperties[material].specificHeat;
+    blocks[blockIndex].latentHeat = materialProperties[material].latentHeat;
+    blocks[blockIndex].temperature = currentBlock.temperature;
+}
+
+function setupInitialMaterialConditions(blockIndex, material) {
     blocks[blockIndex].material = material;
     blocks[blockIndex].specificHeat = materialProperties[material].specificHeat;
     blocks[blockIndex].latentHeat = materialProperties[material].latentHeat;
@@ -123,7 +142,7 @@ function handleMaterialSelection(event) {
     const blockIndex = blocks.findIndex(block => block.label === event.target.getAttribute('data-block'));
 
     if (blockIndex !== -1) {
-        changeMaterial(blockIndex, material);
+        setupInitialMaterialConditions(blockIndex, material);
     }
 }
 
