@@ -3,10 +3,11 @@ let selectedBlockIndex = -1;
 let isSimulationRunning = true;
 let lastUpdateTime = Date.now();
 
+
 const blockWidth = 100;
 const blockHeight = 100;
 const timeInterval = 10000; // Intervalo de tempo em milissegundos
-const temperatureExchangeRate = 10000;
+
 
 const ctx = canvas.getContext('2d');
 
@@ -39,3 +40,27 @@ const blocks = [
     mass: 1
   }
 ];
+
+// Slider
+
+const exchangeRateSlider = document.getElementById('exchangeRateSlider');
+const exchangeRateDisplay = document.getElementById('exchangeRateDisplay');
+
+// Mapeando os valores do slider para valores de taxa de troca de temperatura
+const exchangeRateValues = [30000, 20000, 10000, 5000, 1000];
+
+// Definir o valor inicial do slider e da taxa de troca de temperatura para 10000
+exchangeRateSlider.value = 2;
+let temperatureExchangeRate = exchangeRateValues[2];
+
+// Atualiza o valor da taxa de troca de temperatura e exibe na tela
+function updateExchangeRate() {
+  const sliderValue = exchangeRateSlider.value;
+  const exchangeRate = exchangeRateValues[sliderValue];
+  temperatureExchangeRate = exchangeRate; // Atualiza o valor da constante temperatureExchangeRate
+}
+
+exchangeRateSlider.addEventListener('input', updateExchangeRate);
+
+// Inicializa o display com o valor padrão do slider
+updateExchangeRate();
