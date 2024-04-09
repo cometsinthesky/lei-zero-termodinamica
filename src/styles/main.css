@@ -69,21 +69,6 @@ th {
     background-color: #f7f7f7;
 }
 
-/* Estilos para o contêiner do GIF */
-#gifContainer {
-    position: relative;
-}
-
-/* Estilos para o GIF */
-#gifImage {
-    position: fixed;
-    bottom: 10px;
-    right: 100px;
-    z-index: 999;
-    width: 100px;
-    /* Defina o tamanho do GIF conforme necessário */
-}
-
 a:visited {
     color: #333;
 }
@@ -91,4 +76,70 @@ a:visited {
 footer {
     padding-left: 32px;
     padding-right: 32px;
+}
+
+
+/* Slider */
+.simulation-container {
+    margin-top: 0px;
+    /* Ajuste para posicionar o slider a 100 pixels da borda superior */
+    position: relative;
+}
+
+.slider {
+    width: 150px;
+    margin-top: 45px;
+    /* Ajuste para posicionar o slider a 100 pixels da borda superior */
+    position: absolute;
+    top: 0;
+    right: 50px;
+    /* Posiciona o slider no canto superior direito */
+}
+
+.exchange-rate-label {
+    position: absolute;
+    top: 22px;
+    /* Ajuste para posicionar o texto abaixo do slider */
+    right: 50px;
+    /* Alinha com o canto superior direito */
+    text-align: right;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.slider-label-fast {
+    position: absolute;
+    top: 65px;
+    right: 15px;
+    font-size: 13px;
+    /* Ajuste para posicionar o texto "Rápido" ao lado direito do slider */
+}
+
+.slider-label-slow {
+    position: absolute;
+    top: 65px;
+    right: 195px;
+    font-size: 13px;
+    
+
+    /* Ajuste para posicionar o texto "Devagar" ao lado esquerdo do slider */
+}
+
+.blocks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.block {
+    width: 50px;
+    height: 50px;
+    background-color: lightgray;
+    border: 1px solid black;
+    line-height: 50px;
+    font-size: 24px;
+}
+
+.clearfix {
+    clear: both;
 }

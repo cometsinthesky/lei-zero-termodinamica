@@ -10,4 +10,5 @@ document.getElementById('decreaseBTemperature').addEventListener('click', () => 
 document.getElementById('decreaseCTemperature').addEventListener('click', () => decreaseTemperature(2));
 canvas.addEventListener('mousedown', handleMouseDown);
 
+
 runSimulation();
