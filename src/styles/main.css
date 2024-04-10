@@ -16,6 +16,7 @@ h1 {
 #canvas {
     margin-top: 10px;
     border: 2px solid #333;
+    cursor: pointer;
 }
 
 .temperatureButton {
@@ -93,6 +94,7 @@ footer {
     top: 0;
     right: 50px;
     /* Posiciona o slider no canto superior direito */
+    cursor: pointer;
 }
 
 .exchange-rate-label {
@@ -128,6 +130,7 @@ footer {
     display: flex;
     justify-content: space-between;
     margin-top: 100px;
+    
 }
 
 .block {
@@ -137,6 +140,7 @@ footer {
     border: 1px solid black;
     line-height: 50px;
     font-size: 24px;
+    
 }
 
 .clearfix {
