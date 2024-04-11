@@ -44,7 +44,7 @@
 
 ⁕ Agora você está pronto para explorar a simulação e aprender sobre os princípios da Lei Zero da Termodinâmica e equilíbrio térmico!
 
-![GIF Animado]([https://i.gifer.com/NhNN.gif](https://i.gifer.com/NhNN.gif))
+![Texto Alternativo](https://i.gifer.com/NhNN.gif)
 
 --- 
 
