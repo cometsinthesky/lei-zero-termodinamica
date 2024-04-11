@@ -30,7 +30,7 @@
 
 --- 
 
-## Como usar 🧑‍🏫👨‍🏫
+## Como usar 🧑‍🏫👨‍🏫🧑‍🏫:
 
 ⁕ Acessando a simulação:
 
@@ -44,9 +44,11 @@
 
 ⁕ Agora você está pronto para explorar a simulação e aprender sobre os princípios da Lei Zero da Termodinâmica e equilíbrio térmico!
 
+
 <p align="center">
 <img src="https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/2313/files/2020/06/yeah-science.jpg" alt="Yeah Science" height="230">
 </p>
+
 --- 
 
 ## Educação 📚✏️
