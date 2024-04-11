@@ -20,7 +20,7 @@
 
 ## Dinâmica da Simulação 🎮🕹️
 
-⁕ A simulação proporciona uma experiência interativa ao selecionar materiais a diferentes temperaturas e observar os fenômenos que ocorrem. É interessante para os professores demonstrarem os diferentes intervalos (&Deltat) de troca de calor entre dois ou três materiais distintos, destacando os conceitos de equilíbrio térmico.
+⁕ A simulação proporciona uma experiência interativa ao selecionar materiais a diferentes temperaturas e observar os fenômenos que ocorrem. É interessante para os professores demonstrarem os diferentes intervalos (Δt) de troca de calor entre dois ou três materiais distintos, destacando os conceitos de equilíbrio térmico.
 
 ⁕ Quando os três blocos atingem a mesma temperatura, um estado de equilíbrio térmico é alcançado. Nesse cenário, não há mais transferência líquida de calor entre os blocos, pois suas temperaturas são iguais. Isso ocorre porque, de acordo com a Lei Zero da Termodinâmica, quando dois sistemas estão em equilíbrio térmico com um terceiro sistema, eles também estão em equilíbrio térmico entre si.
 
