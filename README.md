@@ -28,6 +28,10 @@
 
 ⁕ No código, a função Q = m * c * Δt foi incorporada para calcular a troca de calor, levando em consideração as propriedades físicas específicas de cada material e as interações entre os blocos A, B e C. Esta equação é fundamental na termodinâmica, onde **Q** representa a quantidade de calor transferida, **m** é a massa do material (foi adotado um valor padrão para todos os materiais), **c** é o calor específico do material e **Δt** é a mudança de temperatura.
 
+$$
+Q = m \cdot c \cdot \Delta t
+$$
+
 ⁕ A inclusão desta equação no código permite uma simulação precisa da transferência de calor entre os blocos, considerando não apenas as diferenças nas temperaturas iniciais, mas também as características físicas individuais de cada material. Isso proporciona uma representação mais realista dos processos termodinâmicos e das interações entre os objetos na simulação.
 
 ⁕ Além disso, foi implementada a funcionalidade de mudança automática de estado físico do bloco "Água", buscando simular os diferentes estados físicos da água e as transições de fase.
