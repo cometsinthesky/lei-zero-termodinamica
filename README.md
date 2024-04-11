@@ -20,7 +20,7 @@
 
 ## Dinâmica da Simulação 🎮🕹️
 
-⁕ A simulação proporciona uma experiência dinâmica ao selecionar materiais a diferentes temperaturas e observar os fenômenos que ocorrem. É interessante para os professores demonstrarem os diferentes tempos de troca de calor entre dois ou três materiais distintos, destacando os conceitos de equilíbrio térmico.
+⁕ A simulação proporciona uma experiência interativa ao selecionar materiais a diferentes temperaturas e observar os fenômenos que ocorrem. É interessante para os professores demonstrarem os diferentes intervalos (&Deltat) de troca de calor entre dois ou três materiais distintos, destacando os conceitos de equilíbrio térmico.
 
 ⁕ Quando os três blocos atingem a mesma temperatura, um estado de equilíbrio térmico é alcançado. Nesse cenário, não há mais transferência líquida de calor entre os blocos, pois suas temperaturas são iguais. Isso ocorre porque, de acordo com a Lei Zero da Termodinâmica, quando dois sistemas estão em equilíbrio térmico com um terceiro sistema, eles também estão em equilíbrio térmico entre si.
 
@@ -32,28 +32,19 @@
 
 ## Como usar 🧑‍🏫👨‍🏫
 
-- Para usar a simulação:
+⁕ Acessando a simulação:
 
-⁕ Acesse a página web da simulação em [https://cometsinthesky.github.io/lei-zero-termodinamica/](https://cometsinthesky.github.io/lei-zero-termodinamica/).
+- Acesse a página web da simulação em [https://cometsinthesky.github.io/lei-zero-termodinamica/](https://cometsinthesky.github.io/lei-zero-termodinamica/).
 
 -Se preferir usar a simulação offline, siga as seguintes instruções:
-
-*Clique no ícone verde  <span style="color:green">(**<>code**</span> ou [AQUI](https://github.com/cometsinthesky/lei-zero-termodinamica/archive/refs/heads/main.zip);
-*Em seguida, clique em "Download ZIP";
-*Vá para o local do arquivo baixado e extraia os arquivos para uma pasta;
-*Dentro da pasta, clique no arquivo **index.html** e arraste-o para uma aba aberta do navegador e solte-o. A simulação deverá carregar automaticamente.
+    *Clique no ícone verde <font color="green">**<>code**</font> ou [AQUI](https://github.com/cometsinthesky/lei-zero-termodinamica/archive/refs/heads/main.zip);
+    *Em seguida, clique em "Download ZIP";
+    *Vá para o local do arquivo baixado e extraia os arquivos para uma pasta;
+    *Dentro da pasta, clique no arquivo **index.html** e arraste-o para uma aba aberta do navegador e solte-o nessa aba. A simulação deverá carregar automaticamente.
 
 ⁕ Agora você está pronto para explorar a simulação e aprender sobre os princípios da Lei Zero da Termodinâmica e equilíbrio térmico!
 
-<p align="center">
-    <img src="[GIF](https://i.gifer.com/NhNN.gif)" alt="Alt Text">
-</p>
-
---- 
-
-## Recursos Adicionais 📓
-
-⁕ Para obter mais detalhes sobre a simulação e sua implementação, consulte o código-fonte fornecido neste repositório.
+![GIF Animado]([https://i.gifer.com/NhNN.gif](https://i.gifer.com/NhNN.gif))
 
 --- 
 
@@ -64,5 +55,9 @@ De forma geral, a termodinâmica é uma área da física que estuda as relaçõe
 Artigo no prelo: Simulação e Ensino de Física: Lei zero da termodinâmica a partir da experimentação e simulação baseada em programação JavaScript e Canvas Element para o Ensino Médio (FERREIRA, L.; FELIX, M.; CARVALHO, V., 2024).
 
 --- 
+
+## Recursos Adicionais 📓 [Em Construção]
+
+⁕ Para obter mais detalhes sobre a simulação e sua implementação, consulte o código-fonte fornecido neste repositório.
 
 
