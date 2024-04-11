@@ -15,27 +15,14 @@ h1 {
 
 #canvas {
     margin-top: 10px;
+    margin-bottom: 10px;
     border: 2px solid #333;
     cursor: pointer;
 }
 
 .temperatureButton {
     margin-top: 10px;
-  }
-
-.materialButtonGroup {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.materialButtonGroup button {
-    padding: 4px;
-    padding-left: 8px;
-    padding-right: 8px;
-    cursor: pointer;
+         
 }
 
 #materialList {
@@ -44,11 +31,34 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    position: relative;
+    right: 10px; 
 }
+
+.materialButtonGroup {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    right: 10px; 
+}
+
+.materialButtonGroup button {
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    cursor: pointer;
+    position: relative;
+    right: 10px; 
+}
+
 
 #instructionText {
     font-size: 14px;
     text-align: left;
+    margin-bottom: 0px;
 }
 
 table {
@@ -101,26 +111,26 @@ footer {
     position: absolute;
     top: 22px;
     /* Ajuste para posicionar o texto abaixo do slider */
-    right: 50px;
+    right: 60px;
     /* Alinha com o canto superior direito */
     text-align: right;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
 }
 
 .slider-label-fast {
     position: absolute;
-    top: 65px;
+    top: 62px;
     right: 15px;
-    font-size: 13px;
+    font-size: 14px;
     /* Ajuste para posicionar o texto "Rápido" ao lado direito do slider */
 }
 
 .slider-label-slow {
     position: absolute;
-    top: 65px;
+    top: 62px;
     right: 195px;
-    font-size: 13px;
+    font-size: 14px;
     
 
     /* Ajuste para posicionar o texto "Devagar" ao lado esquerdo do slider */
@@ -148,8 +158,44 @@ footer {
 }
 
 /* Styled button */
-.btn-hot{
 
+.btn-hot{
+font-family: Roboto, sans-serif;
+color: #fff;
+  padding: 8px 18px;
+  background-color: #ff6666;
+  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 13px;
+  border: 0;
+  display: inline-block;
+    cursor: pointer;
+    padding-inline: 13px;
+    
+}
+
+.btn-cold{
+
+    font-family: Roboto, sans-serif;
+    color: #fff;
+    padding: 8px 18px;
+    background-color: #00bfff;
+    background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 13px;
+    border: 0;
+    cursor: pointer;
+    padding-inline: 17px;
+
+  }
+
+  /* Styled button backup */
+/* .btn-hot{
+display: inline-block;
 font-family: Roboto, sans-serif;
 font-weight: 500;
 font-size: 14px;
@@ -159,26 +205,7 @@ padding: 6px 15px;
 border: none;
 box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 border-radius: 15px;
-transition : 1000ms;
-flex-direction:row-reverse;
 cursor: pointer;
-}
-
-
-.btn-cold{
-
-font-family: Roboto, sans-serif;
-font-weight: 500;
-font-size: 14px;
-color: #fff;
-background: linear-gradient(142deg, #0077b6 0%, #00b4d8 100%);
-padding: 6px 15px;
-border: none;
-box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-border-radius: 15px;
-transition : 1000ms;
-flex-direction:row-reverse;
-cursor: pointer;
-
-}
-
+display: flex;
+  
+} */
