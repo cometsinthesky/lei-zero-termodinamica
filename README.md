@@ -24,7 +24,11 @@
 
 ⁕ Quando os três blocos atingem a mesma temperatura, um estado de equilíbrio térmico é alcançado. Nesse cenário, não há mais transferência líquida de calor entre os blocos, pois suas temperaturas são iguais. Isso ocorre porque, de acordo com a Lei Zero da Termodinâmica, quando dois sistemas estão em equilíbrio térmico com um terceiro sistema, eles também estão em equilíbrio térmico entre si.
 
-⁕ Nesse contexto, a simulação demonstra vividamente como os blocos, inicialmente em temperaturas diferentes, gradualmente se ajustam até que todas as variações de temperatura sejam eliminadas. Esse estado de equilíbrio térmico é um conceito fundamental na termodinâmica e é crucial para entendermos como o calor é distribuído entre diferentes corpos e materiais em um sistema isolado. Ao observar os três blocos atingindo esse equilíbrio na simulação, os alunos podem visualizar e compreender melhor os princípios envolvidos na Lei Zero da Termodinâmica.
+⁕ A simulação demonstra vividamente como os blocos, inicialmente em temperaturas diferentes, gradualmente se ajustam até que todas as variações de temperatura sejam eliminadas. Esse estado de equilíbrio térmico é um conceito fundamental na termodinâmica e é crucial para entendermos como o calor é distribuído entre diferentes corpos e materiais em um sistema isolado. Ao observar os três blocos atingindo esse equilíbrio na simulação, os alunos podem visualizar e compreender melhor os princípios envolvidos na Lei Zero da Termodinâmica.
+
+⁕ No código, a função Q = m * c * Δt foi incorporada para calcular a troca de calor, levando em consideração as propriedades físicas específicas de cada material e as interações entre os blocos A, B e C. Esta equação é fundamental na termodinâmica, onde **Q** representa a quantidade de calor transferida, **m** é a massa do material (foi adotado um valor padrão para todos os materiais), **c** é o calor específico do material e **Δt** é a mudança de temperatura.
+
+⁕ A inclusão desta equação no código permite uma simulação precisa da transferência de calor entre os blocos, considerando não apenas as diferenças nas temperaturas iniciais, mas também as características físicas individuais de cada material. Isso proporciona uma representação mais realista dos processos termodinâmicos e das interações entre os objetos na simulação.
 
 ⁕ Além disso, foi implementada a funcionalidade de mudança automática de estado físico do bloco "Água", buscando simular os diferentes estados físicos da água e as transições de fase.
 
