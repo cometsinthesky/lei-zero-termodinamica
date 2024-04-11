@@ -1,10 +1,10 @@
-# Simulação da Lei Zero da Termodinâmica :atom:⚛️
+# Simulação da Lei Zero da Termodinâmica ⚛️
 
 ⁕ Este repositório contém uma simulação interativa denominada **Lei Zero da Termodinâmica**, destinada a professores do ensino médio e fundamental para demonstrar os princípios da Lei Zero da Termodinâmica e o conceito de equilíbrio térmico.
 
 --- 
 
-## Descrição 🧑‍🏫👨‍🏫📝
+## Descrição 📝
 
 ⁕ A simulação consiste em três blocos, denominados A, B e C, representando diferentes materiais contidos em uma caixa isolada adiabática. Um processo adiabático é aquele em que não há troca de calor com o ambiente externo. 
 
@@ -22,7 +22,32 @@
 
 ⁕ A simulação proporciona uma experiência dinâmica ao selecionar materiais a diferentes temperaturas e observar os fenômenos que ocorrem. É interessante para os professores demonstrarem os diferentes tempos de troca de calor entre dois ou três materiais distintos, destacando os conceitos de equilíbrio térmico.
 
+⁕ Quando os três blocos atingem a mesma temperatura, um estado de equilíbrio térmico é alcançado. Nesse cenário, não há mais transferência líquida de calor entre os blocos, pois suas temperaturas são iguais. Isso ocorre porque, de acordo com a Lei Zero da Termodinâmica, quando dois sistemas estão em equilíbrio térmico com um terceiro sistema, eles também estão em equilíbrio térmico entre si.
+
+⁕ Nesse contexto, a simulação demonstra vividamente como os blocos, inicialmente em temperaturas diferentes, gradualmente se ajustam até que todas as variações de temperatura sejam eliminadas. Esse estado de equilíbrio térmico é um conceito fundamental na termodinâmica e é crucial para entendermos como o calor é distribuído entre diferentes corpos e materiais em um sistema isolado. Ao observar os três blocos atingindo esse equilíbrio na simulação, os alunos podem visualizar e compreender melhor os princípios envolvidos na Lei Zero da Termodinâmica.
+
 ⁕ Além disso, foi implementada a funcionalidade de mudança automática de estado físico do bloco "Água", buscando simular os diferentes estados físicos da água e as transições de fase.
+
+--- 
+
+## Como usar 🧑‍🏫👨‍🏫
+
+- Para usar a simulação:
+
+⁕ Acesse a página web da simulação em [https://cometsinthesky.github.io/lei-zero-termodinamica/](https://cometsinthesky.github.io/lei-zero-termodinamica/).
+
+-Se preferir usar a simulação offline, siga as seguintes instruções:
+
+*Clique no ícone verde  <span style="color:green">(**<>code**</span> ou [AQUI](https://github.com/cometsinthesky/lei-zero-termodinamica/archive/refs/heads/main.zip);
+*Em seguida, clique em "Download ZIP";
+*Vá para o local do arquivo baixado e extraia os arquivos para uma pasta;
+*Dentro da pasta, clique no arquivo **index.html** e arraste-o para uma aba aberta do navegador e solte-o. A simulação deverá carregar automaticamente.
+
+⁕ Agora você está pronto para explorar a simulação e aprender sobre os princípios da Lei Zero da Termodinâmica e equilíbrio térmico!
+
+<p align="center">
+    <img src="[GIF](https://i.gifer.com/NhNN.gif)" alt="Alt Text">
+</p>
 
 --- 
 
