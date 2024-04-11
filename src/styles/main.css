@@ -162,7 +162,6 @@ border-radius: 15px;
 transition : 1000ms;
 flex-direction:row-reverse;
 cursor: pointer;
-align-items: last baseline;
 }
 
 
