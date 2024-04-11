@@ -37,10 +37,10 @@
 - Acesse a página web da simulação em [https://cometsinthesky.github.io/lei-zero-termodinamica/](https://cometsinthesky.github.io/lei-zero-termodinamica/).
 
 ⁕ Se preferir usar a simulação offline, siga as seguintes instruções:
-    * Clique no ícone verde <font color="green">**<>code**</font> ou [AQUI](https://github.com/cometsinthesky/lei-zero-termodinamica/archive/refs/heads/main.zip);
-    * Em seguida, clique em "Download ZIP";
-    * Vá para o local do arquivo baixado e extraia os arquivos para uma pasta;
-    * Dentro da pasta, clique no arquivo **index.html** e arraste-o para uma aba aberta do navegador e solte-o nessa aba. A simulação deverá carregar automaticamente.
+* Clique no ícone verde <font color="green">**<>code**</font> ou [AQUI](https://github.com/cometsinthesky/lei-zero-termodinamica/archive/refs/heads/main.zip);
+* Em seguida, clique em "Download ZIP";
+* Vá para o local do arquivo baixado e extraia os arquivos para uma pasta;
+* Dentro da pasta, clique no arquivo **index.html** e arraste-o para uma aba aberta do navegador e solte-o nessa aba. A simulação deverá carregar automaticamente.
 
 ⁕ Agora você está pronto para explorar a simulação e aprender sobre os princípios da Lei Zero da Termodinâmica e equilíbrio térmico!
 
