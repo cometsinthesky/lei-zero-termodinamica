@@ -57,9 +57,9 @@
 
 ## Educação 📚✏️
 
-De forma geral, a termodinâmica é uma área da física que estuda as relações entre energia, calor e trabalho. Ao longo dos séculos, os cientistas desenvolveram leis fundamentais que governam o comportamento dos sistemas físicos em diferentes condições termodinâmicas. Uma dessas leis, a Lei Zero da Termodinâmica, estabelece os fundamentos para a definição de temperatura e equilíbrio térmico. Apesar de ser a última a ser formalizada entre as leis termodinâmicas, a Lei Zero desempenha um papel crucial na compreensão de fenômenos termodinâmicos e na construção de escalas de temperatura, por exemplo (HEWITT,2023; NUSSENZVEIG, 2018).
+⁕ De forma geral, a termodinâmica é uma área da física que estuda as relações entre energia, calor e trabalho. Ao longo dos séculos, os cientistas desenvolveram leis fundamentais que governam o comportamento dos sistemas físicos em diferentes condições termodinâmicas. Uma dessas leis, a Lei Zero da Termodinâmica, estabelece os fundamentos para a definição de temperatura e equilíbrio térmico. Apesar de ser a última a ser formalizada entre as leis termodinâmicas, a Lei Zero desempenha um papel crucial na compreensão de fenômenos termodinâmicos e na construção de escalas de temperatura, por exemplo (HEWITT,2023; NUSSENZVEIG, 2018).
 
-Artigo no prelo: Simulação e Ensino de Física: Lei zero da termodinâmica a partir da experimentação e simulação baseada em programação JavaScript e Canvas Element para o Ensino Médio (FERREIRA, L.; FELIX, M.; CARVALHO, V., 2024).
+⁕ Artigo no prelo: Simulação e Ensino de Física: Lei zero da termodinâmica a partir da experimentação e simulação baseada em programação JavaScript e Canvas Element para o Ensino Médio (FERREIRA, L.; FELIX, M.; CARVALHO, V., 2024).
 
 --- 
 
