@@ -1,4 +1,4 @@
-# Simulação da Lei Zero da Termodinâmica ⚛️
+# Simulação Lei Zero da Termodinâmica ⚛️
 
 ⁕ Este repositório contém uma simulação interativa denominada **Lei Zero da Termodinâmica**, destinada a professores do ensino médio e fundamental para demonstrar os princípios da Lei Zero da Termodinâmica e o conceito de equilíbrio térmico.
 
@@ -36,7 +36,7 @@
 
 - Acesse a página web da simulação em [https://cometsinthesky.github.io/lei-zero-termodinamica/](https://cometsinthesky.github.io/lei-zero-termodinamica/).
 
-- Se preferir usar a simulação offline, siga as seguintes instruções:
+⁕ Se preferir usar a simulação offline, siga as seguintes instruções:
     * Clique no ícone verde <font color="green">**<>code**</font> ou [AQUI](https://github.com/cometsinthesky/lei-zero-termodinamica/archive/refs/heads/main.zip);
     * Em seguida, clique em "Download ZIP";
     * Vá para o local do arquivo baixado e extraia os arquivos para uma pasta;
@@ -44,7 +44,7 @@
 
 ⁕ Agora você está pronto para explorar a simulação e aprender sobre os princípios da Lei Zero da Termodinâmica e equilíbrio térmico!
 
-![Texto Alternativo](https://i.gifer.com/NhNN.gif)
+![GIF Animado](https://i.gifer.com/NhNN.gif)
 
 --- 
 
