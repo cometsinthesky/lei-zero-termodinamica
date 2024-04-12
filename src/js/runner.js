@@ -1,7 +1,3 @@
-document.querySelectorAll('.materialButton').forEach(button => {
-  button.addEventListener('click', handleMaterialSelection);
-});
-
 document.getElementById('increaseATemperature').addEventListener('click', () => increaseTemperature(0));
 document.getElementById('increaseBTemperature').addEventListener('click', () => increaseTemperature(1));
 document.getElementById('increaseCTemperature').addEventListener('click', () => increaseTemperature(2));
@@ -10,5 +6,6 @@ document.getElementById('decreaseBTemperature').addEventListener('click', () => 
 document.getElementById('decreaseCTemperature').addEventListener('click', () => decreaseTemperature(2));
 canvas.addEventListener('mousedown', handleMouseDown);
 
+document.getElementById('block-a-select').addEventListener('change', handleMaterialSelectionForBlockA)
 
 runSimulation();
