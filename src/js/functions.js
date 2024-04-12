@@ -153,3 +153,18 @@ function runSimulation() {
     }
     requestAnimationFrame(runSimulation);
 }
+
+function handleMaterialSelectionForBlockA(event) {
+    let material = event.target.value;
+
+    // Caso seja selecionada a opcao "Escolha um material" o value é uma string vazia
+    // entao devemos colocar o defaultMaterial.
+    if (!material) {
+        material = defaultMaterial;
+    }
+
+    /** Numero 0 no primeiro argumento indica a posicao do bloco no array de blocks.
+    * O numero deve variar de acordo com a posicao do bloco no array.
+    */
+    setupInitialMaterialConditions(0, material);
+}
