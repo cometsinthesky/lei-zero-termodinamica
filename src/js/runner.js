@@ -6,6 +6,13 @@ document.getElementById('decreaseBTemperature').addEventListener('click', () => 
 document.getElementById('decreaseCTemperature').addEventListener('click', () => decreaseTemperature(2));
 canvas.addEventListener('mousedown', handleMouseDown);
 
-document.getElementById('block-a-select').addEventListener('change', handleMaterialSelectionForBlockA)
+document.getElementById('block-a-select').addEventListener('change', handleMaterialSelectionForBlockA);
+
+document.getElementById('block-b-select').addEventListener('change', handleMaterialSelectionForBlockB);
+
+document.getElementById('block-c-select').addEventListener('change', handleMaterialSelectionForBlockC);
+
+
+
 
 runSimulation();
