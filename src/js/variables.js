@@ -7,7 +7,6 @@ let lastUpdateTime = Date.now();
 const blockWidth = 100;
 const blockHeight = 100;
 const timeInterval = 10000; // Intervalo de tempo em milissegundos
-const defaultMaterial = 'water';
 
 
 const ctx = canvas.getContext('2d');
