@@ -4,6 +4,27 @@
 
 --- 
 
+## Como usar 👨‍🏫
+
+⁕ Acessando a simulação:
+
+- Acesse a página web da simulação em [https://cometsinthesky.github.io/lei-zero-termodinamica/](https://cometsinthesky.github.io/lei-zero-termodinamica/).
+
+⁕ Se preferir usar a simulação offline, siga as seguintes instruções:
+* Na página do [repositório](https://github.com/cometsinthesky/lei-zero-termodinamica) clique no ícone verde **<>code**;
+* Em seguida, clique em "Download ZIP", ou se preferir o download direto clique [AQUI](https://github.com/cometsinthesky/lei-zero-termodinamica/archive/refs/heads/main.zip);
+* Vá para o local do arquivo baixado e extraia os arquivos para uma pasta;
+* Dentro da pasta, clique no arquivo **index.html** e arraste-o para uma aba aberta do navegador e solte-o nessa aba. A simulação deverá carregar automaticamente.
+
+⁕ Agora você está pronto para explorar a simulação e aprender sobre os princípios da Lei Zero da Termodinâmica e equilíbrio térmico!
+
+
+<p align="center">
+<img src="https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/2313/files/2020/06/yeah-science.jpg" alt="Yeah Science" height="230">
+</p>
+
+--- 
+
 ## Descrição 📝
 
 ⁕ A simulação consiste em três blocos, denominados A, B e C, representando diferentes materiais contidos em uma caixa isolada adiabática. Um processo adiabático é aquele em que não há troca de calor com o ambiente externo. 
@@ -31,27 +52,6 @@
 ⁕ A inclusão da equação  ‎ $Q = m \cdot c \cdot \Delta T$‎ ‎   no código permite uma simulação precisa da transferência de calor entre os blocos, considerando não apenas as diferenças nas temperaturas iniciais, mas também as características físicas individuais de cada material. Isso proporciona uma representação mais realista dos processos termodinâmicos e das interações entre os objetos na simulação.
 
 ⁕ Além disso, foi implementada a funcionalidade de mudança automática de estado físico do bloco "Água", buscando simular os diferentes estados físicos da água e as transições de fase.
-
---- 
-
-## Como usar 👨‍🏫
-
-⁕ Acessando a simulação:
-
-- Acesse a página web da simulação em [https://cometsinthesky.github.io/lei-zero-termodinamica/](https://cometsinthesky.github.io/lei-zero-termodinamica/).
-
-⁕ Se preferir usar a simulação offline, siga as seguintes instruções:
-* Na página do [repositório](https://github.com/cometsinthesky/lei-zero-termodinamica) clique no ícone verde **<>code**;
-* Em seguida, clique em "Download ZIP", ou se preferir o download direto clique [AQUI](https://github.com/cometsinthesky/lei-zero-termodinamica/archive/refs/heads/main.zip);
-* Vá para o local do arquivo baixado e extraia os arquivos para uma pasta;
-* Dentro da pasta, clique no arquivo **index.html** e arraste-o para uma aba aberta do navegador e solte-o nessa aba. A simulação deverá carregar automaticamente.
-
-⁕ Agora você está pronto para explorar a simulação e aprender sobre os princípios da Lei Zero da Termodinâmica e equilíbrio térmico!
-
-
-<p align="center">
-<img src="https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/2313/files/2020/06/yeah-science.jpg" alt="Yeah Science" height="230">
-</p>
 
 --- 
 
