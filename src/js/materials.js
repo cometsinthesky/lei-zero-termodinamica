@@ -15,6 +15,14 @@ const materialProperties = {
         minTemperature: -273.15,
         maxTemperature: 0
     },
+    watervapour: {
+        name: 'Vapor (H2O)',
+        specificHeat: 1.99,
+        latentHeat: 2257,
+        averageTemperature: 100,
+        minTemperature: 100,
+        maxTemperature: 2000
+    },
     glass: {
         name: 'Vidro',
         specificHeat: 0.84,
