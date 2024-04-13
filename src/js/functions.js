@@ -4,10 +4,10 @@ function drawBlocks() {
         ctx.fillStyle = block.color;
         ctx.fillRect(block.x, block.y, blockWidth, blockHeight);
         ctx.fillStyle = '#000';
-        ctx.font = '24px Arial';
+        ctx.font = '24px Roboto';
         ctx.fillText(block.label, block.x + 40, block.y + 60);
-        ctx.font = '14px Arial';
-        ctx.fillText(`Temp: ${block.temperature.toFixed(1)}°C`, block.x, block.y - 5);
+        ctx.font = '16px Roboto';
+        ctx.fillText(`Temp: ${block.temperature.toFixed(1)} °C`, block.x, block.y - 5);
         ctx.fillText(materialProperties[block.material].name, block.x + 10, block.y + blockHeight - 5);
     });
 }
@@ -54,18 +54,33 @@ function equalizeTemperature() {
                 block1.temperature = Math.max(minTemperature, Math.min(maxTemperature, block1.temperature));
                 block2.temperature = Math.max(minTemperature, Math.min(maxTemperature, block2.temperature));
 
+
                 // Verificar se o material do bloco de gelo deve mudar para água
-                if (block1.material === 'ice' && block1.temperature > 0) {
+            if (block1.material === 'ice' && block1.temperature > 0) {
                     changeMaterial(i, 'water', block1);
                 } else if (block2.material === 'ice' && block2.temperature > 0) {
                     changeMaterial(j, 'water', block2);
                 }
 
                 // Verificar se o material do bloco de água deve mudar para gelo
-                if (block1.material === 'water' && block1.temperature <= 0) {
+            if (block1.material === 'water' && block1.temperature <= 0) {
                     changeMaterial(i, 'ice', block1);
                 } else if (block2.material === 'water' && block2.temperature <= 0) {
                     changeMaterial(j, 'ice', block2);
+                }
+
+                // Verificar se o material do bloco de água deve mudar para vapor
+            if (block1.material === 'water' && block1.temperature > 100) {
+                    changeMaterial(i, 'watervapour', block1);
+                } else if (block2.material === 'water' && block2.temperature > 100) {
+                    changeMaterial(j, 'watervapour', block2);
+                }
+
+                // Verificar se o material do bloco vapor deve mudar para água
+            if (block1.material === 'watervapour' && block1.temperature <= 100) {
+                    changeMaterial(i, 'water', block1);
+                } else if (block2.material === 'watervapour' && block2.temperature <= 100) {
+                    changeMaterial(j, 'water', block2);
                 }
             }
         }
@@ -73,21 +88,94 @@ function equalizeTemperature() {
     lastUpdateTime = currentTime;
 }
 
+// Aumenta temperatura bloco
 function increaseTemperature(blockIndex) {
     const block = blocks[blockIndex];
     block.temperature += 10;
+
+    // gelo para água
     if (block.material === 'ice' && block.temperature > 0) {
         changeMaterial(blockIndex, 'water', block)
+
+        if (blockIndex === 0){
+            document.getElementById("block-a-select").value="water"
+        }
+
+        else if (blockIndex === 1){
+            document.getElementById("block-b-select").value="water"
+        }
+
+        else if (blockIndex === 2){
+            document.getElementById("block-c-select").value="water"
+        }
+    }
+
+    //água para vapor
+        if (block.material === 'water' && block.temperature >= 100) {
+            changeMaterial(blockIndex, 'watervapour', block)
+    
+            if (blockIndex === 0){
+                document.getElementById("block-a-select").value="watervapour"
+            }
+    
+            else if (blockIndex === 1){
+                document.getElementById("block-b-select").value="watervapour"
+            }
+    
+            else if (blockIndex === 2){
+                document.getElementById("block-c-select").value="watervapour"
+        }
     }
 }
 
+lastUpdateTime = currentTime;
+
+
+// Diminui temperatura bloco 
 function decreaseTemperature(blockIndex) {
     const block = blocks[blockIndex];
     block.temperature -= 10;
-    if (block.material === 'water' && block.temperature <= 0) {
+     // Verificar se a temperatura atingiu o zero absoluto
+     if (block.temperature < -273.15) {
+        block.temperature = -273.15;
+    } else if (block.temperature <= 0 && block.temperature > -273.15) {
+    //água para gelo
+    if (block.material === 'water' && block.temperature < 0) {
         changeMaterial(blockIndex, 'ice', block)
+
+        if (blockIndex === 0){
+            document.getElementById("block-a-select").value="ice"
+        }
+
+        else if (blockIndex === 1){
+            document.getElementById("block-b-select").value="ice"
+        }
+
+        else if (blockIndex === 2){
+            document.getElementById("block-c-select").value="ice"
+        }
+    }
+
+    // vapor para água
+    if (block.material === 'watervapour' && block.temperature < 100) {
+        changeMaterial(blockIndex, 'water', block)
+
+        if (blockIndex === 0){
+            document.getElementById("block-a-select").value="water"
+        }
+
+        else if (blockIndex === 1){
+            document.getElementById("block-b-select").value="water"
+        }
+
+        else if (blockIndex === 2){
+            document.getElementById("block-c-select").value="water"
+        }
     }
 }
+}
+
+lastUpdateTime = currentTime;
 
 function handleMouseDown(event) {
     const mouseX = event.clientX - canvas.getBoundingClientRect().left;
@@ -146,6 +234,36 @@ function handleMaterialSelection(event) {
     }
 }
 
+// 
+function handleMaterialSelectionForBlockA(event) {
+    let material = event.target.value;
+
+    /** Numero 0 no primeiro argumento indica a posicao do bloco no array de blocks.
+    * O numero deve variar de acordo com a posicao do bloco no array.
+    */
+    setupInitialMaterialConditions(0, material);
+}
+
+function handleMaterialSelectionForBlockB(event) {
+    let material = event.target.value;
+
+   
+    /** Numero 0 no primeiro argumento indica a posicao do bloco no array de blocks.
+    * O numero deve variar de acordo com a posicao do bloco no array.
+    */
+    setupInitialMaterialConditions(1, material);
+}
+
+function handleMaterialSelectionForBlockC(event) {
+    let material = event.target.value;
+
+   
+    /** Numero 0 no primeiro argumento indica a posicao do bloco no array de blocks.
+    * O numero deve variar de acordo com a posicao do bloco no array.
+    */
+    setupInitialMaterialConditions(2, material);
+}
+
 function runSimulation() {
     if (isSimulationRunning) {
         equalizeTemperature();
@@ -153,3 +271,4 @@ function runSimulation() {
     }
     requestAnimationFrame(runSimulation);
 }
+
