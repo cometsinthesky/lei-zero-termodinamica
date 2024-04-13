@@ -138,8 +138,9 @@ function decreaseTemperature(blockIndex) {
      // Verificar se a temperatura atingiu o zero absoluto
      if (block.temperature < -273.15) {
         block.temperature = -273.15;
-    } else if (block.temperature <= 0 && block.temperature > -273.15) {
-    //água para gelo
+    } else if (block.temperature <= 0 && block.temperature > -273.15)
+    
+        //água para gelo
     if (block.material === 'water' && block.temperature < 0) {
         changeMaterial(blockIndex, 'ice', block)
 
@@ -172,7 +173,6 @@ function decreaseTemperature(blockIndex) {
             document.getElementById("block-c-select").value="water"
         }
     }
-}
 }
 
 lastUpdateTime = currentTime;
@@ -217,6 +217,13 @@ function changeMaterial(blockIndex, material, currentBlock) {
     blocks[blockIndex].latentHeat = materialProperties[material].latentHeat;
     blocks[blockIndex].temperature = currentBlock.temperature;
 }
+
+
+//TO-DO
+ // Atualizar automaticamente o botão correspondente
+ const selectElementId = `block-${blockIndex}-select`;
+ document.getElementById(selectElementId).value = material;
+
 
 function setupInitialMaterialConditions(blockIndex, material) {
     blocks[blockIndex].material = material;
@@ -264,6 +271,7 @@ function handleMaterialSelectionForBlockC(event) {
     setupInitialMaterialConditions(2, material);
 }
 
+
 function runSimulation() {
     if (isSimulationRunning) {
         equalizeTemperature();
@@ -271,4 +279,6 @@ function runSimulation() {
     }
     requestAnimationFrame(runSimulation);
 }
+
+//.
 
