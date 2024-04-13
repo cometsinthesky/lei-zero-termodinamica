@@ -156,7 +156,16 @@ footer {
     right: 50px;
     /* Posiciona o slider no canto superior direito */
     cursor: pointer;
+    border-radius: 10px; /* Define o arredondamento das bordas do thumb */
 }
+
+
+/* Altera a cor do track */
+.slider::-webkit-slider-runnable-track {
+    background: #acacac; /* Cor de fundo do track */
+    border-radius: 10px;
+}
+
 
 .exchange-rate-label {
     position: absolute;
