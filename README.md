@@ -4,6 +4,20 @@
 
 --- 
 
+## Descrição 📝
+
+⁕ A simulação consiste em três blocos, denominados A, B e C, representando diferentes materiais contidos em uma caixa isolada adiabática. Um processo adiabático é aquele em que não há troca de calor com o ambiente externo. 
+
+⁕ Através de botões clicáveis na tela, é possível selecionar o tipo de material para cada bloco, bem como aumentar ou diminuir a temperatura de cada bloco individualmente.
+
+⁕ No canto inferior direito da interface, encontra-se um slider que permite ajustar a taxa de troca de calor entre os blocos, controlando assim a velocidade da simulação.
+
+⁕ Uma tabela contendo diversas propriedades físicas dos materiais está disponível, incluindo calor específico (J/kg.K), calor latente (J/kg) e temperaturas média, mínima e máxima (°C).
+
+⁕ Ao final da página, uma imagem ilustrativa sobre o conceito da Lei Zero da Termodinâmica está anexada, destinada ao uso em sala de aula pelos professores e como recurso para os estudantes.
+
+--- 
+
 ## Como usar 👨‍🏫
 
 ⁕ Acessando a simulação:
@@ -22,20 +36,6 @@
 <p align="center">
 <img src="https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/2313/files/2020/06/yeah-science.jpg" alt="Yeah Science" height="230">
 </p>
-
---- 
-
-## Descrição 📝
-
-⁕ A simulação consiste em três blocos, denominados A, B e C, representando diferentes materiais contidos em uma caixa isolada adiabática. Um processo adiabático é aquele em que não há troca de calor com o ambiente externo. 
-
-⁕ Através de botões clicáveis na tela, é possível selecionar o tipo de material para cada bloco, bem como aumentar ou diminuir a temperatura de cada bloco individualmente.
-
-⁕ No canto inferior direito da interface, encontra-se um slider que permite ajustar a taxa de troca de calor entre os blocos, controlando assim a velocidade da simulação.
-
-⁕ Uma tabela contendo diversas propriedades físicas dos materiais está disponível, incluindo calor específico (J/kg.K), calor latente (J/kg) e temperaturas média, mínima e máxima (°C).
-
-⁕ Ao final da página, uma imagem ilustrativa sobre o conceito da Lei Zero da Termodinâmica está anexada, destinada ao uso em sala de aula pelos professores e como recurso para os estudantes.
 
 --- 
 
