@@ -1,7 +1,5 @@
-# Simulação Lei Zero da Termodinâmica ⚛️
+# Simulação Lei Zero da Termodinâmica ⚛️ Português (Pt-BR)
 ---
-**Português (Pt-BR)**
-
 ⁕ Este repositório contém uma simulação interativa denominada **Lei Zero da Termodinâmica**, destinada a professores do ensino médio e fundamental para demonstrar os princípios da Lei Zero da Termodinâmica e o conceito de equilíbrio térmico.
 
 ## Descrição 📝
@@ -67,9 +65,8 @@
 
 ---
 
-# Zeroth Law of Thermodynamics Simulation ⚛️
-**English (EN) 🇪🇺🇨🇦🇦🇺🏴󠁧󠁢󠁥󠁮󠁧󠁿**
-
+# Zeroth Law of Thermodynamics Simulation ⚛️ English (EN) 🇪🇺🇨🇦🇦🇺🏴󠁧󠁢󠁥󠁮󠁧󠁿
+---
 This repository contains an interactive simulation called the **Zeroth Law of Thermodynamics**, designed for high school and middle school teachers to demonstrate the principles of the Zeroth Law of Thermodynamics and the concept of thermal equilibrium.
 
 ## Description 📝
