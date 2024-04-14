@@ -68,6 +68,7 @@
 
 # Zeroth Law of Thermodynamics Simulation ⚛️
 (English - EN)
+
 This repository contains an interactive simulation called the **Zeroth Law of Thermodynamics**, designed for high school and middle school teachers to demonstrate the principles of the Zeroth Law of Thermodynamics and the concept of thermal equilibrium.
 
 ## Description 📝
