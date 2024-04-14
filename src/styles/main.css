@@ -1,89 +1,67 @@
 body {
     font-family: 'Roboto', sans-serif;
+    color: #f0f0f0;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: #000000;
+}
+
+/* New Title Hover */
+.text {
+    font-family: "Roboto";
+    color: #f0f0f0;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    position: relative;
+    bottom: 10px;
+    text-align: center;
+    user-select: none;
+
+    .wrapper {
+        padding-left: 7px;
+        padding-right: 7px;
+        padding-top: 40px;
+
+        .letter {
+            transition: ease-out 0.1s;
+            /* Distância entre os títulos */
+            transform: translateY(42%);
+        }
+
+        .shadow {
+            transform: scale(1, -1);
+            color: #6b6b6bcc;
+            transition: ease-in 0.2s, ease-out 0.2s;
+        }
+
+        &:hover {
+            .letter {
+                transform: translateY(-30%);
+            }
+
+            .shadow {
+                opacity: 0;
+                transform: translateY(30%);
+            }
+        }
+    }
 }
 
 
-/* Tittle Hover */
-h1 {
-    
-        position: relative;
-        font-size: 22px;
-        letter-spacing:5px;
-        font-family: 'Roboto', sans-serif;
-        display:table;
-        margin:10px auto;
-        cursor:pointer;
-        transition:1s;
-      }
-      h1:before,
-      h1:after {
-        content:attr(data-text);
-        transition:1s;
-      }
-      h1:before {
-        left: 0;
-        top: 0;
-        position: absolute;
-        z-index:-1;
-        text-shadow:
-         0px 0px,
-         0px 0px,
-         0px 0px,
-         0px 0px,
-         0px 0px,
-         0px 0px,
-         0px 0px,
-         0px 0px,
-         0px 0px,
-         0px 0px;
-        -webkit-mask:repeating-linear-gradient(45deg, transparent 0 10px, rgba(0,0,0,0.5) 0 30px);
-                mask:repeating-linear-gradient(45deg, transparent 0 10px, rgba(0,0,0,0.5) 0 30px);
-      }
-      h1:hover {
-        transform:translate(5px,-5px);
-      }  
-      h1:hover:before {
-        text-shadow:
-         1px 1px,
-         2px 2px,
-         3px 3px,
-         4px 4px,
-         5px 5px,
-         6px 6px,
-         7px 7px,
-         8px 8px,
-         9px 9px,
-         10px 10px;
-      }
-
-
-
-
 #canvas {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 2px solid #333;
+    margin-top: 20px;
+    border: 2px solid #b8b8b8;
     cursor: pointer;
 }
 
 .temperatureButton {
     margin-top: 10px;
-         
-}
+    color: #f0f0f0;
 
-#materialList {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
-    right: 10px; 
 }
 
 .materialButtonGroup {
@@ -93,16 +71,18 @@ h1 {
     gap: 10px;
     margin-bottom: 10px;
     position: relative;
-    right: 10px; 
+    color: #f0f0f0;
+
 }
 
 .materialButtonGroup button {
-    padding: 4px;
+    padding: 30px;
     padding-left: 8px;
     padding-right: 8px;
     cursor: pointer;
     position: relative;
-    right: 10px; 
+    right: 10px;
+    color: #f0f0f0;
 }
 
 
@@ -110,68 +90,84 @@ h1 {
     font-size: 14px;
     text-align: left;
     margin-bottom: 0px;
+    color: #f0f0f0;
 }
 
 table {
     border-collapse: collapse;
-    width: 700px;
+    width: 650px;
     font-size: 14px;
     margin-right: 0px;
+    color: #f0f0f0;
 }
 
 th,
 td {
-    border: 1.5px solid #bbb;
-    padding: 8px;
+    border: 1.5px solid #929292;
+    padding: 7px;
     text-align: center;
 }
 
 th {
-    background-color: #f7f7f7;
+    background-color: #181818ad;
 }
 
 a:visited {
-    color: #333;
+    color: #eeeeee;
 }
 
 footer {
+    margin-top: 20px;
+    margin-bottom: -20px;
     padding-left: 32px;
     padding-right: 32px;
+    color: #f0f0f0;
 }
 
-
-/* Slider */
-.simulation-container {
-    margin-top: 0px;
-    /* Ajuste para posicionar o slider a 100 pixels da borda superior */
-    position: relative;
-}
 
 .slider {
     width: 150px;
-    margin-top: 45px;
+    margin-top: 35px;
     /* Ajuste para posicionar o slider a 100 pixels da borda superior */
     position: absolute;
     top: 0;
     right: 50px;
     /* Posiciona o slider no canto superior direito */
     cursor: pointer;
-    border-radius: 10px; /* Define o arredondamento das bordas do thumb */
+    border-radius: 30px;
+    /* Define o arredondamento das bordas do thumb */
 }
 
 
 /* Altera a cor do track */
 .slider::-webkit-slider-runnable-track {
-    background: #acacac; /* Cor de fundo do track */
+    background: #595959;
+    /* Cor de fundo do track */
     border-radius: 10px;
+}
+
+/* Estilos para navegadores WebKit (Chrome, Safari, etc.) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Remove a aparência padrão do thumb */
+    width: 30px;
+    /* Largura do thumb para WebKit */
+    height: 30px;
+    /* Altura do thumb para WebKit */
+    background-color: #ffffff;
+    /* Cor do thumb para WebKit */
+    border-radius: 50%;
+    /* Torna o thumb redondo para WebKit */
+    cursor: pointer;
 }
 
 
 .exchange-rate-label {
+    color: #f0f0f0;
     position: absolute;
-    top: 22px;
+    top: 12px;
     /* Ajuste para posicionar o texto abaixo do slider */
-    right: 60px;
+    right: 55px;
     /* Alinha com o canto superior direito */
     text-align: right;
     font-size: 14px;
@@ -179,39 +175,34 @@ footer {
 }
 
 .slider-label-fast {
+    color: #f0f0f0;
     position: absolute;
-    top: 62px;
+    top: 54px;
     right: 15px;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: bold;
     /* Ajuste para posicionar o texto "Rápido" ao lado direito do slider */
 }
 
 .slider-label-slow {
+    color: #f0f0f0;
     position: absolute;
-    top: 62px;
+    top: 54px;
     right: 195px;
-    font-size: 14px;
-    
-
-    /* Ajuste para posicionar o texto "Devagar" ao lado esquerdo do slider */
+    font-size: 13px;
+    font-weight: bold;
 }
+
 
 .blocks {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     margin-top: 100px;
-    
+    color: #f0f0f0;
+
 }
 
-.block {
-    width: 50px;
-    height: 50px;
-    background-color: lightgray;
-    border: 1px solid black;
-    line-height: 50px;
-    font-size: 24px;
-    
-}
 
 .clearfix {
     clear: both;
@@ -219,53 +210,105 @@ footer {
 
 /* Styled button */
 
-.btn-hot{
-font-family: Roboto, sans-serif;
-color: #fff;
-  padding: 8px 18px;
-  background-color: #ff6666;
-  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
-  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 13px;
-  border: 0;
-  display: inline-block;
+.btn-hot {
+    font-family: Roboto, sans-serif;
+    color: #f0f0f0;
+    padding: 8px 18px;
+    background-color: #ff6666;
+    background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 12.5px;
+    border: 0;
+    display: inline-block;
     cursor: pointer;
     padding-inline: 13px;
-    
+    margin-top: 12px;
 }
 
-.btn-cold{
+.btn-cold {
 
     font-family: Roboto, sans-serif;
-    color: #fff;
+    color: #f0f0f0;
     padding: 8px 18px;
     background-color: #00bfff;
     background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
     box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 12.5px;
     border: 0;
     cursor: pointer;
     padding-inline: 17px;
+    margin-top: 7px;
+    margin-bottom: 12px;
 
-  }
+}
 
-  /* Styled button backup */
-/* .btn-hot{
-display: inline-block;
-font-family: Roboto, sans-serif;
-font-weight: 500;
-font-size: 14px;
-color: #fff;
-background: linear-gradient(70deg, #e76f51 0%, #d62828 100%);
-padding: 6px 15px;
-border: none;
-box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-border-radius: 15px;
-cursor: pointer;
-display: flex;
-  
+
+/* Botão dropdown da lista de materiais
+.dropdown-button: {
+    body {
+        background-color: #ededed;
+        font-family: "Roboto", sans-serif;
+    }
+
+    h1 {
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    li a {
+        text-decoration: none;
+        color: #2d2f31;
+    }
+}
+
+
+nav {
+    width: 200px;
+    height: 30px;
+    background: #d9d9d9;
+    margin: 10px auto;
+}
+
+span {
+    padding: 30px;
+    background: #2d2f31;
+    color: white;
+    font-size: 15px;
+    font-variant: small-caps;
+    cursor: pointer;
+    display: block;
+}
+
+span::after {
+    float: right;
+    right: 10%;
+    content: "+";
+}
+
+.slide {
+    clear: both;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    text-align: center;
+    transition: height .4s ease;
+}
+
+.slide li {
+    padding: 30px;
+}
+
+#touch {
+    position: absolute;
+    opacity: 0;
+    height: 100px;
+}
+
+#touch:checked+.slide {
+    height: 300px;
 } */

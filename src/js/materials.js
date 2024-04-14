@@ -21,7 +21,7 @@ const materialProperties = {
         latentHeat: 2257,
         averageTemperature: 100,
         minTemperature: 100,
-        maxTemperature: 2000
+        maxTemperature: 2726
     },
     glass: {
         name: 'Vidro',
