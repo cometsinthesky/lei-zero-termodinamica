@@ -1,4 +1,5 @@
 # Simulação Lei Zero da Termodinâmica ⚛️
+---
 **Português (Pt-BR)**
 
 ⁕ Este repositório contém uma simulação interativa denominada **Lei Zero da Termodinâmica**, destinada a professores do ensino médio e fundamental para demonstrar os princípios da Lei Zero da Termodinâmica e o conceito de equilíbrio térmico.
