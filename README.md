@@ -69,7 +69,6 @@
 ⁕ Para obter mais detalhes sobre a simulação e sua implementação, consulte o código-fonte fornecido neste repositório.
 
 ---
----
 
 # Zeroth Law of Thermodynamics Simulation ⚛️
 ## English (EN) 🇪🇺🇨🇦🇦🇺🏴󠁧󠁢󠁥󠁮󠁧󠁿
@@ -120,9 +119,9 @@ When the three blocks reach the same temperature, a state of thermal equilibrium
 
 The simulation vividly demonstrates how the blocks, initially at different temperatures, gradually adjust until all temperature variations are eliminated. This state of thermal equilibrium is a fundamental concept in thermodynamics and is crucial for understanding how heat is distributed among different bodies and materials in an isolated system. By observing the three blocks reaching this equilibrium in the simulation, students can visualize and better understand the principles involved in the Zeroth Law of Thermodynamics.
 
-In the code, the equation ‎$Q = m \cdot c \cdot \Delta T$‎ has been incorporated to calculate heat exchange, taking into account the specific physical properties of each material and the interactions between blocks A, B, and C. This equation is fundamental in thermodynamics, where **Q** represents the amount of transferred heat, **m** is the mass of the material (a standard value is adopted for all materials), **c** is the specific heat of the material, and **ΔT** is the temperature change.
+In the code, the equation  ‎ $Q = m \cdot c \cdot \Delta T$‎ ‎   has been incorporated to calculate heat exchange, taking into account the specific physical properties of each material and the interactions between blocks A, B, and C. This equation is fundamental in thermodynamics, where **Q** represents the amount of transferred heat, **m** is the mass of the material (a standard value is adopted for all materials), **c** is the specific heat of the material, and **ΔT** is the temperature change.
 
-The inclusion of the equation ‎$Q = m \cdot c \cdot \Delta T$‎ in the code allows for an accurate simulation of heat transfer between the blocks, considering not only differences in initial temperatures but also the individual physical characteristics of each material. This provides a more realistic representation of thermodynamic processes and interactions between objects in the simulation.
+The inclusion of the equation  ‎ $Q = m \cdot c \cdot \Delta T$‎ ‎   in the code allows for an accurate simulation of heat transfer between the blocks, considering not only differences in initial temperatures but also the individual physical characteristics of each material. This provides a more realistic representation of thermodynamic processes and interactions between objects in the simulation.
 
 Additionally, the functionality of automatic change of physical state of the "Water" block has been implemented to simulate the different physical states of water and phase transitions.
 
