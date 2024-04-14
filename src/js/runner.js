@@ -13,6 +13,4 @@ document.getElementById('block-b-select').addEventListener('change', handleMater
 document.getElementById('block-c-select').addEventListener('change', handleMaterialSelectionForBlockC);
 
 
-
-
 runSimulation();
