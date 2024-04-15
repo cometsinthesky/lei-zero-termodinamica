@@ -1,5 +1,5 @@
 # Simulação Lei Zero da Termodinâmica ⚛️ 
-(Português|Pt-BR)
+(Português | Pt-BR)
 
 ⁕ Este repositório contém uma simulação interativa denominada <a href="https://cometsinthesky.github.io/lei-zero-termodinamica" target="_blank">**Lei Zero da Termodinâmica**</a>, destinada a professores do ensino médio e fundamental para demonstrar os princípios da Lei Zero da Termodinâmica e o conceito de equilíbrio térmico.
 
@@ -69,7 +69,7 @@
 ---
 
 # Zeroth Law of Thermodynamics Simulation ⚛️
-(English|EN)
+(English | EN)
 
 This repository contains an interactive simulation called the <a href="https://cometsinthesky.github.io/lei-zero-termodinamica" target="_blank">**Zeroth Law of Thermodynamics**</a>, designed for high school and middle school teachers to demonstrate the principles of the Zeroth Law of Thermodynamics and the concept of thermal equilibrium.
 
