@@ -34,6 +34,78 @@ restartButton.addEventListener('click', function() {
     location.reload();
 });
 
+
+// Adiciona Timer
+let timerInterval;
+let startTime;
+let pausedTime = 0;
+let isRunning = false;
+let lapCounter = 1;
+
+function startTimer() {
+  if (!isRunning) {
+    startTime = Date.now() - pausedTime;
+    timerInterval = setInterval(updateTimer, 10);
+    isRunning = true;
+  }
+}
+
+function pauseTimer() {
+  if (isRunning) {
+    clearInterval(timerInterval);
+    pausedTime = Date.now() - startTime;
+    isRunning = false;
+  }
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  pausedTime = 0;
+  isRunning = false;
+  lapCounter = 1;
+  updateTimeDisplay(0);
+  clearTimeList();
+}
+
+function saveTime() {
+  const currentTime = Date.now() - startTime;
+  const formattedTime = formatTime(currentTime);
+  const timeList = document.getElementById("timeList");
+  const listItem = document.createElement("li");
+  listItem.textContent = `Tempo ${lapCounter}: ${formattedTime}`;
+  timeList.appendChild(listItem);
+  lapCounter++;
+}
+
+function clearTimeList() {
+  const timeList = document.getElementById("timeList");
+  timeList.innerHTML = "";
+}
+
+function formatTime(time) {
+  const centiseconds = Math.floor((time % 1000) / 10);
+  const seconds = Math.floor((time / 1000) % 60);
+  const minutes = Math.floor((time / (1000 * 60)) % 60);
+  return `${padTime(minutes)} m : ${padTime(seconds)} s : ${padTime(centiseconds)}`;
+}
+
+function padTime(value) {
+  return value < 10 ? "0" + value : value;
+}
+
+function updateTimer() {
+  const currentTime = Date.now() - startTime;
+  updateTimeDisplay(currentTime);
+}
+
+function updateTimeDisplay(time) {
+  const formattedTime = formatTime(time);
+  document.getElementById("timer").textContent = formattedTime;
+}
+
+
+
+
 runSimulation();
 
 
