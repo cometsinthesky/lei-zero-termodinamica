@@ -130,6 +130,6 @@ This repository contains an interactive simulation called the <a href="https://c
 
 ---
 
-# Additional Resources 📓 [Under Construction]
+## Additional Resources 📓 [Under Construction]
 
 ⁕ For more details about the simulation and its implementation, refer to the provided source code in this repository.
