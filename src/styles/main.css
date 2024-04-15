@@ -58,13 +58,31 @@ body {
     cursor: pointer;
 }
 
-.control-buttons {
+/* Botão pausa */
+.pause-button{
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
     position: absolute;
-    top: 300px; /* Ajuste conforme necessário */
+    top: 270px; /* Ajuste conforme necessário */
     left: 120px; /* Ajuste conforme necessário */
+    padding: 8px 26px;
+    background-color: #4CAF50; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Mostra o cursor como ponteiro ao passar sobre o botão */
+    font-size: 14px; /* Tamanho da fonte */
+    width: 95px; /* Largura fixa do botão */
+    text-align: center; /* Centralizar o texto */
 }
 
-.pause-button {
+/* Botão reinicia */
+.restart-button {
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    position: absolute;
+    top: 330px; /* Ajuste conforme necessário */
+    left: 112px; /* Ajuste conforme necessário */
     padding: 8px 26px;
     background-color: #4CAF50; /* Cor de fundo do botão */
     color: white; /* Cor do texto do botão */
@@ -74,9 +92,17 @@ body {
     font-size: 14px; /* Tamanho da fonte */
 }
 
-.pause-button:hover {
+.pause-button:hover,
+.restart-button:hover {
     background-color: #45a049; /* Altera a cor de fundo quando o botão é passado com o mouse */
 }
+
+/* Estilo quando pressionado */
+.pause-button:active,
+.restart-button:active {
+    background-color: #50bb56; /* Cor de fundo mais escura */
+}
+
 
 
 .temperatureButton {
