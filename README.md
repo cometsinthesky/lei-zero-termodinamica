@@ -65,6 +65,8 @@
 ⁕ Para obter mais detalhes sobre a simulação e sua implementação, consulte o código-fonte fornecido neste repositório.
 
 ---
+---
+---
 
 # Zeroth Law of Thermodynamics Simulation ⚛️
 (English - EN)
@@ -125,7 +127,7 @@ This repository contains an interactive simulation called the **Zeroth Law of Th
 
 ⁕ In general, thermodynamics is an area of physics that studies the relationships between energy, heat, and work. Over the centuries, scientists have developed fundamental laws that govern the behavior of physical systems under different thermodynamic conditions. One of these laws, the Zeroth Law of Thermodynamics, establishes the foundations for the definition of temperature and thermal equilibrium. Despite being the last to be formalized among the thermodynamic laws, the Zeroth Law plays a crucial role in understanding thermodynamic phenomena and in constructing temperature scales, for example (HEWITT, 2023; NUSSENZVEIG, 2018).
 
-Article in press: Simulation and Physics Teaching: Zeroth law of thermodynamics through experimentation and simulation based on JavaScript programming and Canvas Element for High School (FERREIRA, L.; FELIX, M.; CARVALHO, V., 2024).
+⁕ Article in press: Simulation and Physics Teaching: Zeroth law of thermodynamics through experimentation and simulation based on JavaScript programming and Canvas Element for High School (FERREIRA, L.; FELIX, M.; CARVALHO, V., 2024).
 
 ---
 
