@@ -66,7 +66,6 @@
 
 ---
 ---
----
 
 # Zeroth Law of Thermodynamics Simulation ⚛️
 (English | EN)
