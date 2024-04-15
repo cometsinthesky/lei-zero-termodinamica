@@ -13,4 +13,14 @@ document.getElementById('block-b-select').addEventListener('change', handleMater
 document.getElementById('block-c-select').addEventListener('change', handleMaterialSelectionForBlockC);
 
 
+// Adicione um evento de clique ao botão de pausa
+document.querySelector('.pause-button').addEventListener('click', function() {
+  // Alterna o estado da simulação
+  isSimulationRunning = !isSimulationRunning;
+
+  // Altera o texto do botão de acordo com o estado da simulação
+  this.textContent = isSimulationRunning ? 'Pausa' : 'Play';
+});
+
 runSimulation();
+

@@ -282,7 +282,7 @@ function handleMaterialSelectionForBlockC(event) {
     setupInitialMaterialConditions(2, material);
 }
 
-
+// Função Run Simulation
 function runSimulation() {
     if (isSimulationRunning) {
         equalizeTemperature();
