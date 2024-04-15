@@ -71,7 +71,7 @@
 # Zeroth Law of Thermodynamics Simulation ⚛️
 (English - EN)
 
-This repository contains an interactive simulation called the [**Zeroth Law of Thermodynamics**](https://cometsinthesky.github.io/lei-zero-termodinamica/){:target="_blank"}, designed for high school and middle school teachers to demonstrate the principles of the Zeroth Law of Thermodynamics and the concept of thermal equilibrium.
+This repository contains an interactive simulation called the <a href="https://cometsinthesky.github.io/lei-zero-termodinamica" target="_blank">**Zeroth Law of Thermodynamics**</a>, designed for high school and middle school teachers to demonstrate the principles of the Zeroth Law of Thermodynamics and the concept of thermal equilibrium.
 
 ## Description 📝
 
