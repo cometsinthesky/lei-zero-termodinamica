@@ -282,6 +282,7 @@ function handleMaterialSelectionForBlockC(event) {
     setupInitialMaterialConditions(2, material);
 }
 
+
 // Função Run Simulation
 function runSimulation() {
     if (isSimulationRunning) {
@@ -290,3 +291,6 @@ function runSimulation() {
     }
     requestAnimationFrame(runSimulation);
 }
+
+
+

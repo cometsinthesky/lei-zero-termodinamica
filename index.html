@@ -222,6 +222,25 @@
         </div>
 
 
+<!-- Adiciona timer -->
+<div class="timer-container">
+    <h2>Cronômetro</h2> 
+    <div id="timer">00 m : 00 s : 00</div>
+    <div class="buttons">
+      <button onclick="startTimer()">Iniciar</button>
+      <button onclick="pauseTimer()">Pausar</button>
+      <button onclick="resetTimer()">Reiniciar</button>
+      <button onclick="saveTime()">Guardar</button>
+    </div>
+    <div class="time-list">
+      <h2>Tempos Guardados</h2>
+      <ul id="timeList"></ul>
+    </div>
+    <img src="./image-icons/clock.png" alt="CLock icon" class="clock-icon">
+  </div>
+
+
+
     <!-- Adiciona slider  -->
     <div class="container">
     <input type="range" min="0" max="4" value="2" class="slider" id="exchangeRateSlider">
@@ -233,7 +252,8 @@
     <img src="./image-icons/speed.png" alt="Speed icon" class="img-speed">
 </div>
 
- 
+
+
 </div>
 
     <table>

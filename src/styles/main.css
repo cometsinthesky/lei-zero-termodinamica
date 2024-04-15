@@ -5,7 +5,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #000000;
+/* Adiciona gradiente de preto a branco */
+background: linear-gradient(to bottom, #000000, #1A1A1A);
 }
 
 /* New Title Hover */
@@ -134,7 +135,7 @@ body {
 
 
 #instructionText {
-    font-size: 14px;
+    font-size: 12px;
     text-align: left;
     margin-bottom: 0px;
     color: #f0f0f0;
@@ -189,14 +190,14 @@ footer {
 .img-speed {
     position: absolute;
     top: 50px;
-    right: 90px;
-    width: 70px; /* Ajuste conforme necessário */
+    right: 95px;
+    width: 65px; /* Ajuste conforme necessário */
     height: auto; /* Para manter a proporção da imagem */
 }
 
 /* Altera a cor do track */
 .slider::-webkit-slider-runnable-track {
-    background: #8d8d8d;
+    background: #6d6d6d;
     /* Cor de fundo do track */
     border-radius: 10px;
 }
@@ -301,69 +302,91 @@ footer {
 
 }
 
+/* Layout timer */
 
-/* Botão dropdown da lista de materiais
-.dropdown-button: {
-    body {
-        background-color: #ededed;
-        font-family: "Roboto", sans-serif;
-    }
-
-    h1 {
-        padding: 20px;
-        text-align: center;
-        font-size: 14px;
-    }
-
-    li a {
-        text-decoration: none;
-        color: #2d2f31;
-    }
-}
-
-
-nav {
-    width: 200px;
-    height: 30px;
-    background: #d9d9d9;
-    margin: 10px auto;
-}
-
-span {
-    padding: 30px;
-    background: #2d2f31;
-    color: white;
-    font-size: 15px;
-    font-variant: small-caps;
-    cursor: pointer;
-    display: block;
-}
-
-span::after {
-    float: right;
-    right: 10%;
-    content: "+";
-}
-
-.slide {
-    clear: both;
-    width: 100%;
-    height: 0px;
-    overflow: hidden;
-    text-align: center;
-    transition: height .4s ease;
-}
-
-.slide li {
-    padding: 30px;
-}
-
-#touch {
+.timer-container{
+    font-family: Roboto, sans-serif;
+    color: #f0f0f0;
     position: absolute;
-    opacity: 0;
-    height: 100px;
-}
+    top: 260px; /* A partir da borda superior */
+    right: 5px; /* A partir da borda direita */
+    align-items: center;
 
-#touch:checked+.slide {
-    height: 300px;
-} */
+
+    h2 {
+        font-size: 17px; /* Altere este valor para o tamanho desejado */
+        color: #f0f0f0;
+    }
+
+  #timer {
+    font-size: 18px;
+    color: #f0f0f0;
+    margin-bottom: 10px;
+    font-weight: bold;
+    width: 170px;
+ 
+  }
+  
+  .buttons {
+    display: flex;
+    font-family: Roboto, sans-serif;
+    position: absolute;
+    align-items: center;
+    right: 10px;
+    gap: 2px;
+  }
+  
+  .buttons button {
+    display: flex;
+    font-family: Roboto, sans-serif;
+    color: #f0f0f0;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 9px;
+    background-color: #408acf; /* Cor de fundo do botão */
+    border-radius: 5px; /* Borda arredondada */
+    border: none;
+    cursor: pointer; /* Mostra o cursor como ponteiro ao passar sobre o botão */
+    margin-bottom: 5px;
+  }
+  
+  .time-list {
+    max-height: 150px; /* Altura máxima da lista */
+    max-width: 230px;
+    overflow-y: auto; /* Tornar a lista rolável */
+    position: absolute;
+    margin-top: 30px;
+    width: 230px;
+    right: 0px;
+  }
+  
+  .time-list h2 {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #f0f0f0;
+  }
+  
+  .time-list ul {
+    padding-left: -10px;
+    margin-right: 5px;
+  }
+  
+  .time-list ul li {
+    list-style: none;
+    font-size: 14px;
+    margin-bottom: 3px;
+
+  }
+
+  /* Image speed icon slider */
+.clock-icon {
+    position: absolute;
+    top: -22px;
+    right: 16px;
+    width: 50px; /* Ajuste conforme necessário */
+    height: auto; /* Para manter a proporção da imagem */
+    opacity: 0.95;
+}
+}
