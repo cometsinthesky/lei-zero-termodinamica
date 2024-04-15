@@ -138,10 +138,18 @@ footer {
     /* Define o arredondamento das bordas do thumb */
 }
 
+/* Image speed icon slider */
+.img-speed {
+    position: absolute;
+    top: 50px;
+    right: 90px;
+    width: 70px; /* Ajuste conforme necessário */
+    height: auto; /* Para manter a proporção da imagem */
+}
 
 /* Altera a cor do track */
 .slider::-webkit-slider-runnable-track {
-    background: #595959;
+    background: #8d8d8d;
     /* Cor de fundo do track */
     border-radius: 10px;
 }
