@@ -30,6 +30,7 @@ function equalizeTemperature() {
                 block1.y + blockHeight > block2.y;
 
             if (blocksInContact) {
+                startTimer(); // Inicia o timer quando os blocos entram em contato
                 // Calcular a quantidade de calor transferida (Q) usando a fórmula Q = mcΔT
                 const mass1 = block1.mass;
                 const mass2 = block2.mass;
