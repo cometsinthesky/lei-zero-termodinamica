@@ -47,6 +47,9 @@ function startTimer() {
     startTime = Date.now() - pausedTime;
     timerInterval = setInterval(updateTimer, 10);
     isRunning = true;
+      // Inicia ou retoma a simulação, dependendo do estado atual
+  isSimulationRunning = true;
+  pauseButton.textContent = 'Pausa';
   }
 }
 
@@ -55,6 +58,9 @@ function pauseTimer() {
     clearInterval(timerInterval);
     pausedTime = Date.now() - startTime;
     isRunning = false;
+      // Pausa a simulação
+  isSimulationRunning = false;
+  pauseButton.textContent = 'Play';
   }
 }
 
@@ -65,6 +71,8 @@ function resetTimer() {
   lapCounter = 1;
   updateTimeDisplay(0);
   clearTimeList();
+    // Reinicia a simulação
+    location.reload();
 }
 
 function saveTime() {
@@ -102,9 +110,6 @@ function updateTimeDisplay(time) {
   const formattedTime = formatTime(time);
   document.getElementById("timer").textContent = formattedTime;
 }
-
-
-
 
 runSimulation();
 
