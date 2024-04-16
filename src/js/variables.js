@@ -13,8 +13,8 @@ const ctx = canvas.getContext('2d');
 
 const blocks = [
   {
-    x: 50,
-    y: 50,
+    x: 75,
+    y: 60,
     color: '#ff6666',
     temperature: 0,
     label: 'A',
@@ -22,8 +22,8 @@ const blocks = [
     mass: 1
   },
   {
-    x: 250,
-    y: 50,
+    x: 275,
+    y: 60,
     color: '#00bfff',
     temperature: 60,
     label: 'B',
@@ -31,8 +31,8 @@ const blocks = [
     mass: 1
   },
   {
-    x: 450,
-    y: 50,
+    x: 475,
+    y: 60,
     color: '#28f200',
     temperature: 20,
     label: 'C',

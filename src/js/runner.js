@@ -42,27 +42,34 @@ let pausedTime = 0;
 let isRunning = false;
 let lapCounter = 1;
 
+function toggleSimulation() {
+  if (isRunning) {
+      clearInterval(timerInterval);
+      pausedTime = Date.now() - startTime;
+      isRunning = false;
+      isSimulationRunning = false;
+      pauseButton.textContent = 'Play';
+  } else {
+      startTime = Date.now() - pausedTime;
+      timerInterval = setInterval(updateTimer, 10);
+      isRunning = true;
+      isSimulationRunning = true;
+      pauseButton.textContent = 'Pause';
+  }
+}
+
 function startTimer() {
   if (!isRunning) {
-    startTime = Date.now() - pausedTime;
-    timerInterval = setInterval(updateTimer, 10);
-    isRunning = true;
-      // Inicia ou retoma a simulação, dependendo do estado atual
-  isSimulationRunning = true;
-  pauseButton.textContent = 'Pausa';
+      toggleSimulation();
   }
 }
 
 function pauseTimer() {
   if (isRunning) {
-    clearInterval(timerInterval);
-    pausedTime = Date.now() - startTime;
-    isRunning = false;
-      // Pausa a simulação
-  isSimulationRunning = false;
-  pauseButton.textContent = 'Play';
+      toggleSimulation();
   }
 }
+
 
 function resetTimer() {
   clearInterval(timerInterval);
