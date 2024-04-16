@@ -59,6 +59,24 @@ background: linear-gradient(to bottom, #000000, #1A1A1A);
     cursor: pointer;
 }
 
+/* Mensagem equilíbrio térmico */
+.hidden {
+    display: none;
+  }
+  
+  #equilibriumMessage {
+    color: #f0f0f0;
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 8px 10px;
+    border: 2px solid #f0f0f0;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
 /* Botão pausa */
 .pause-button{
     font-family: Roboto, sans-serif;

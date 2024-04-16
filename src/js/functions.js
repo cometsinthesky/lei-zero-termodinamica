@@ -15,6 +15,9 @@ function drawBlocks() {
     )
 }
 
+// Variáveis globais
+let equilibriumReached = false;
+
 // Função de equalização de temperatura entre os blocos
 function equalizeTemperature() {
     const currentTime = Date.now();
@@ -60,6 +63,12 @@ function equalizeTemperature() {
                 block2.temperature = Math.max(minTemperature, Math.min(maxTemperature, block2.temperature));
 
 
+                // Verificar o equilíbrio térmico após a equalização de temperatura
+                if (Math.abs(block1.temperature - block2.temperature) < 0.05 && !equilibriumReached) {
+                    showEquilibriumMessage();
+                    equilibriumReached = true;
+                }
+
                 // Condições de temperatura e troca de materiais 
 
                 // Verificar se o material do bloco de gelo deve mudar para água
@@ -92,8 +101,16 @@ function equalizeTemperature() {
             }
         }
     }
+
     lastUpdateTime = currentTime;
 }
+
+function showEquilibriumMessage() {
+    const equilibriumMessage = document.getElementById('equilibriumMessage');
+    equilibriumMessage.classList.remove('hidden');
+}
+
+
 
 
 // Atualiza o material do bloco a partir da temperatura do bloco
